@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+		<link href="mapNews.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+	    	html { height: 100% }
+	    	body { height: 100% }
+	    </style>
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCZua5Ok7N6HCuTvUgF2EzDMt50eq-LoQ8&sensor=false"></script>
+		
+	</head>
+	<body>
+		<div id="mainHeading">Map News</div>
+		<div id="sideBar">
+			<form>
+				<span id="errorMsg"></span><br>
+				Location Name:
+				<input type="text" id="locationName"></input><br>
+				Lattitude: 
+				<input type="text" id="lat"></input><br>
+				Longitude:
+				<input type="text" id="lng"></input><br>
+				<input type="button" id="addMarkerButton" value="Add Marker" onclick="addMarker()"></input>
+			</form>
+			<h1>Headlines</h1>
+			<h2>Details</h2>
+			<h3>etc</h3>
+			<h1>Headlines</h1>
+			<h2>Details</h2>
+			<h3>etc</h3>
+			<h1>Headlines</h1>
+			<h2>Details</h2>
+			<h3>etc</h3>
+			<h1>Headlines</h1>
+			<h2>Details</h2>
+			<h3>etc</h3>
+			<h1>Headlines</h1>
+			<h2>Details</h2>
+			<h3>etc</h3>
+			<h1>Headlines</h1>
+			<h2>Details</h2>
+			<h3>etc</h3>
+			<h1>Headlines</h1>
+			<h2>Details</h2>
+			<h3>etc</h3>
+		</div>
+		<div id="mainMap"></div>
+		<script type="text/javascript" src="mapNews.js"></script>
+	</body>
+</html>
