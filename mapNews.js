@@ -22,11 +22,32 @@ function addMarker(){
 	else{
 		document.getElementById("errorMsg").innerHTML = "adding marker..";
 		var latLng = new google.maps.LatLng(lat, lng);
-		var maker = new google.maps.Marker({
+		var imgWidth = 100;
+		var imgHeight = 50;
+		var img = new google.maps.MarkerImage(document.getElementById("imgURL").value, //url
+												new google.maps.Size(imgWidth,imgHeight), //size
+												new google.maps.Point(0,0), //origin - position of image;
+												new google.maps.Point(0,0), //anchor
+												new google.maps.Size(imgWidth, imgHeight)); //scaled size
+		//define clickable region
+		var shape = {
+			coord: [0,0 , imgWidth,0 , imgWidth,imgHeight, 0,imgHeight],
+			type: 'poly'
+		};
+
+		var marker = new google.maps.Marker({
 			position: latLng,
 			map: map,
+			icon: img,
+			shape: shape,
+			url: document.getElementById("linkURL").value,
 			title: document.getElementById("locationName").value
+		});
+
+		google.maps.event.addListener(marker, 'click', function() {
+    		window.location.href = this.url;
 		});
 	}
 		
 }
+
