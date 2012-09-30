@@ -24,11 +24,15 @@ function makeKeywords(result) {
     var i;
     var keywords = [];
     for(i=0; i<facets.length; i++) {
-        if (result[facets[i]+"_facet"].length > 0) {
+        if (Array.isArray(result[facets[i]+"_facet"]) && result[facets[i]+"_facet"].length > 0) {
             keywords.push(result[facets[i]+"_facet"].join(" "));
         }
     }
     return keywords.join(" ");
+}
+
+function processLocation(s) {
+	return s;
 }
 
 // Callback to process newswire data
@@ -38,11 +42,11 @@ function callback1(data) {
     var article;
     
     for(var i=0; i<results.length; i++) {
-        if (results[i].geo_facet.length > 0) {
+        if (Array.isArray(results[i].geo_facet) && results[i].geo_facet.length > 0) {
             article = {};
             article.headline = results[i].title;
             article.abstract = results[i].abstract;
-            article.location = results[i].geo_facet.join(", ");
+            article.location = processLocation(results[i].geo_facet[0]); //.join(", ");
             article.url = results[i].url;
             article.keywords = makeKeywords(results[i]);
             article.thumbnail = "images/new-york-times-logo.jpg";
