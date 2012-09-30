@@ -1,12 +1,27 @@
+//getNews(searchTerm)
+
+//populateMap()
+
 function Map(){
 	this.mapDisplay;
+	this.currentMarkerPos;
 }
 
 Map.prototype.infoBox = new InfoBox({	
 	content: ""
 	,closeBoxURL: ""
 	,pixelOffset: new google.maps.Size(-170,-160)
+	,boxClass: "newsBox"
 });
+
+Map.prototype.twitBox = new InfoBox({
+	content: ""
+	,closeBoxURL: ""
+	,pixelOffset: new google.maps.Size(70,-20)
+	,boxClass: "twitBox"
+})
+
+
 var map = new Map();
 
 window.onload = function(){
@@ -56,6 +71,13 @@ function addMarker(){
 		});
 
 		google.maps.event.addListener(marker, 'mouseover', function() {
+			//do not run the function if this marker is already display infoboxes from previous mouseover
+    		if (this.position === map.currentMarkerPos)
+    			return;
+    		else
+    			map.currentMarkerPos = this.position;
+
+			//create news infobox
     		map.infoBox.open(map.mapDisplay, marker);
     		
     		var headline = document.createElement("h1");
@@ -69,6 +91,34 @@ function addMarker(){
 
     		map.infoBox.setContent(infoBoxContent);
     		
+
+    		//create twitter infobox
+    		map.twitBox.open(map.mapDisplay, marker);
+
+    		var twitterIcon = document.createElement("img");
+    		twitterIcon.src = "twitterIcon.gif";
+    		twitterIcon.height = "50";
+    		twitterIcon.width = "50";
+
+    		//twitter Feeds are hidden until user mouses over
+    		var twitterFeeds = document.createElement("div");
+    		twitterFeeds.className = "twitterFeedsHidden";
+
+    		//create a twitter wrapper to store the twitter icon img tag and tweets
+    		var twitterWrapper = document.createElement("div");
+    		twitterWrapper.id = "twitterWrapperShown";
+    		twitterWrapper.appendChild(twitterIcon);
+    		twitterWrapper.appendChild(twitterFeeds);
+
+    		map.twitBox.setContent(twitterWrapper);
+
+    		//create event for mouse over on twit box
+    		$(twitterWrapper).mouseenter(function(){
+    			twitterFeeds.className = "twitterFeedsRevealed";
+    		});
+    		$(twitterWrapper).mouseleave(function(){
+    			twitterFeeds.className = "twitterFeedsHidden";
+    		});
 		});
 
 		google.maps.event.addListener(marker, 'click', function(){
@@ -77,6 +127,15 @@ function addMarker(){
 
 
 	}
-		
+
 }
+/*
+function populateMap(newsDataArray){
+	var newsData;
+	for (var i = 0; i < newsDataArray.length; i++){
+		newsData = newsDataArray[i];
+
+	}	
+}
+*/
 

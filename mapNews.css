@@ -96,7 +96,7 @@ body{
 	height: 100%;
 }
 
-.infoBox{
+.newsBox{
 	width: 300px;
 	height: 100px;
 	padding: 10px;
@@ -109,12 +109,32 @@ body{
 	color: #d30000;
 }
 
-.infoBox h1{
+.newsBox h1{
 	font-size: 15px;
 	font-weight: 900;
 }
 
-.infoBox h2{
+.newsBox h2{
 	margin-top: 10px;
 	font-size: 12px;
+}
+
+.twitterFeedsRevealed{
+	width: 300px;
+	height: 400px;
+	border: 3px solid #000000;
+	background-color: #fea9a9;
+	box-shadow: 0px 0px 20px #000000;
+	border-radius: 15px;
+	opacity: 0.9;
+    -webkit-transition: all 0.5s;
+	-webkit-transform: translate(-200px, -300px);
+
+}
+
+.twitterFeedsHidden{
+	width: 0px;
+	height: 0px;
+    -webkit-transition: all 0.5s;
+    -webkit-transform: translate(30px,-30px);
 }
