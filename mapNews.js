@@ -23,8 +23,8 @@ var map = new Map();
 
 window.onload = function(){
 	var mapOptions = {
-		center: new google.maps.LatLng(40.44350370, -79.94157059999),
-		zoom: 8,
+		center: new google.maps.LatLng(30,0 ),
+		zoom: 2,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 	map.mapDisplay = new google.maps.Map(document.getElementById("mainMap"), mapOptions);
@@ -47,12 +47,10 @@ function addNewsToMap(news) {
 
 
 function addMarker(news, geoLocation){	
-	console.log(geoLocation);
-	console.log(news);
 	var lat = geoLocation.Xa;
 	var lng = geoLocation.Ya;
 	var latLng = new google.maps.LatLng(lat, lng);
-	var imgWidth = 100;
+	var imgWidth = 50;
 	var imgHeight = 50;
 	var img = new google.maps.MarkerImage(news.thumbnail, //url
 											new google.maps.Size(imgWidth,imgHeight), //size
@@ -136,7 +134,7 @@ function addMarker(news, geoLocation){
 
 
 function populateMap(newsDataArray){
-	for (var i = 0; i < 5; i++){
+	for (var i = 0; i <= 10; i++){
 		addNewsToMap(newsDataArray[i]);
 	}	
 }
