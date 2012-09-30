@@ -32,7 +32,28 @@ function makeKeywords(result) {
 }
 
 function processLocation(s) {
-	return s;
+    return s.replace(" (", ", ").replace(")", "");
+}
+
+function extractLocation(geo_facet, abstract) {
+    var i;
+    
+    if (typeof geo_facet === "string") {
+        return processLocation(geo_facet);
+    }
+    else {
+        // Figure out which one occurs most
+        var max_freq = 0;
+        var max_location = "";
+        for(i=0; i<geo_facet.length; i++) {
+            var freq = abstract.split(geo_facet[i]).length;
+            if (freq > max_freq) {
+                max_freq = freq;
+                max_location = geo_facet[i];
+            }
+        }
+        return processLocation(max_location);
+    }
 }
 
 // Callback to process newswire data
@@ -42,11 +63,11 @@ function callback1(data) {
     var article;
     
     for(var i=0; i<results.length; i++) {
-        if (Array.isArray(results[i].geo_facet) && results[i].geo_facet.length > 0) {
+        if (results[i].geo_facet.length > 0) {
             article = {};
             article.headline = results[i].title;
             article.abstract = results[i].abstract;
-            article.location = processLocation(results[i].geo_facet[0]); //.join(", ");
+            article.location = extractLocation(results[i].geo_facet, results[i].abstract);
             article.url = results[i].url;
             article.keywords = makeKeywords(results[i]);
             article.thumbnail = "images/new-york-times-logo.jpg";
@@ -58,7 +79,7 @@ function callback1(data) {
             ret.push(article);
         }
     }
-    
+      
     populateMap(ret);
 }
 
