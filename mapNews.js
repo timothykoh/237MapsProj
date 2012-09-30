@@ -47,6 +47,8 @@ function addNewsToMap(news) {
 
 
 function addMarker(news, geoLocation){	
+	console.log(geoLocation);
+	console.log(news);
 	var lat = geoLocation.Xa;
 	var lng = geoLocation.Ya;
 	var latLng = new google.maps.LatLng(lat, lng);
@@ -134,10 +136,12 @@ function addMarker(news, geoLocation){
 
 
 function populateMap(newsDataArray){
-	for (var i = 0; i < newsDataArray.length; i++){
+	for (var i = 0; i < 5; i++){
 		addNewsToMap(newsDataArray[i]);
 	}	
 }
 
 
 getNews("");
+
+
