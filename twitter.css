@@ -8,8 +8,7 @@
 }
 .tweet{
     display: block;
-    padding: .4em;
-    margin: .4em 0;
+    padding-left: 0.4em;
 }
 .tweet-left{
     float: left;
@@ -26,9 +25,9 @@
 .mainbox{
     
     display:block;
-    width:300px;
+    
 
-    border:1px solid black;
+    
     margin:10px;
     background-color: #FFFFFF;
     -moz-border-radius: 15px;
@@ -40,6 +39,18 @@
     box-shadow: inset 0 0 60px 5px #888;
 }
 ​
-.mainBoxHeader{
+.innermainbox{
+    
+    display:block;
+    
 
+    
+    margin:10px;
+    background-color: #FFFFFF;
+    
+   
+    
+    -moz-box-shadow: inset 0 0 60px 5px #888;
+    -webkit-box-shadow: inset 0 0 60px 5px#ff0000;
+    box-shadow: inset 0 0 60px 5px #888;
 }

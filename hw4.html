@@ -4,6 +4,7 @@
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
 		<link href="mapNews.css" rel="stylesheet" type="text/css">
 		<link href="twitter.css" rel="stylesheet" type="text/css">
+		<link href="socialmediatabs.css" rel="stylesheet" type="text/css">
 		<style type="text/css">
 	    	html { height: 100% }
 	    	body { height: 100% }
@@ -26,26 +27,38 @@
 			<h2>Details</h2>
 			<h3>etc</h3>
 			
-			<div id="output"><h1>Social Media</h1></div>
-			<div class="mainbox">
-				<h2>Twitter Updates</h2>
-			<div id="outputTwitter"></div>
-				</div>
-			<div class="mainbox">
-				<h2>FB Updates</h2>
-			<div id="outputFb"></div>
-				</div>
-			<div class="mainbox">
-				<h2>Blog Posts</h2>
-			<div id="outputBlog"></div>
-				</div>
+			
+
+		<div class="mainbox">
+			<div id="tabs_container">
+			<ul id='tabs'>
+			    <li id="twittertab"><a href='#outputTwitter'>Twitter</a></li>
+			    <li><a href='#outputFb'>Facebook</a></li>
+			    <li><a href='#outputBlog'>Blogs</a></li>
+			</ul>
+			</div>
+	      
+	    
+	      <div id="outputTwitter"></div>
+	        
+	      <div class="innermainbox">
+	        
+	      <div id="outputFb"></div>
+	        </div>
+	      <div class="innermainbox">
+	        
+	      <div id="outputBlog"></div>
+	        </div>
 
 		</div>
+	</div>	
+
 		<div id="mainMap"></div>
 
 
 
-		<script type="text/javascript" src="socialmedia.js"></script> 
+		<script type="text/javascript" src="socialmedia.js"></script>
+		<script type="text/javascript" src="socialmediatabs.js"></script>
 		<script type="text/javascript" src="news.js"></script>
 		<script type="text/javascript" src="mapNews.js"></script>
 	</body>

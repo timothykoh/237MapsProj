@@ -21,6 +21,7 @@ console.log(fbquery);
 $.getJSON(fbquery, function(data){
 	
     var counter=0;
+    $("#outputFb").empty();
     $(data['data']).each(function(i,v){                      
     	if (counter<6){                                       //counter counts the no. of comments already added
      		var userid=this.from.id;
@@ -33,7 +34,8 @@ $.getJSON(fbquery, function(data){
    			if (this.message && this.message.length<300 && this.message.length>100){
              
              var fbUpdate='<div class="tweet"><div class="tweet-left"><a target="_blank" href="'+useridurl+'"><img width="48" height="48" alt="'+useridurl+' on FB" src="'+userpic+'" /></a></div><div class="tweet-right"><p class="text">'+message+'</p></div><br style="clear: both;" /></div>';
-             $("#outputFb").empty();
+             
+
              $("#outputFb").append(fbUpdate);
              counter+=1;
     			}                
@@ -49,17 +51,18 @@ $.getJSON(fbquery, function(data){
 function getTweets(keyword){
 
     var searchterm = keyword;
-
+    $("#outputTwitter").empty();
     var url= "http://search.twitter.com/search.json?q="+
         searchterm + 
-        "&rpp=5&callback=?";
+        "&rpp=4&callback=?";
     $.getJSON( url, function( data ) {
-        $(data.results).each(function(i,v)
-                {
-                    var tweet='<div class="tweet"><div class="tweet-left"><a target="_blank" href="http://twitter.com/'+this.from_user+'"><img width="48" height="48" alt="'+this.from_user+' on Twitter" src="'+this.profile_image_url+'" /></a></div><div class="tweet-right"><p class="text">'+this.text+'</p></div><br style="clear: both;" /></div>';
-        $("#outputTwitter").empty();
-        $("#outputTwitter").append(tweet);
-                    
+      var counter=0;
+        $(data.results).each(function(i,v){
+          if (counter<5){
+            var tweet='<div class="tweet"><div class="tweet-left"><a target="_blank" href="http://twitter.com/'+this.from_user+'"><img width="48" height="48" alt="'+this.from_user+' on Twitter" src="'+this.profile_image_url+'" /></a></div><div class="tweet-right"><p class="text">'+this.text+'</p></div><br style="clear: both;" /></div>';
+            counter+=1;
+            $("#outputTwitter").append(tweet);
+             }       
         });
     });
 }
@@ -90,13 +93,14 @@ function searchComplete() {
       var blogSearchResults="<a href="+link+">"+title+"</a></br>"; 
       console.log(blogSearchResults);
       //var blogSearchResults=<a target="_blank" href='link'><p class="text">title</p></a>;
-      $("#outputBlog").empty();
+      
       $("#outputBlog").append(blogSearchResults);
     }
   }
 }
 
 function getBlog(keyword) {
+  $("#outputBlog").empty();
   var SearchTerm= keyword;
   console.log(SearchTerm);
   // Create a BlogSearch instance.
@@ -115,6 +119,8 @@ function getBlog(keyword) {
  
 }
 
+/*
+function preventDuplicate(){        //if duplicate then we do not add it to updates
 
-
-//"-"'+snippet+'
+}
+*/
