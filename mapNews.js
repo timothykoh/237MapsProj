@@ -7,15 +7,22 @@ function Map(){
 Map.prototype.infoBox = new InfoBox({	
 	content: ""
 	,closeBoxURL: ""
-	,pixelOffset: new google.maps.Size(-170,-160)
+	,pixelOffset: new google.maps.Size(-170,-210)
 	,boxClass: "newsBox"
 });
 
 Map.prototype.twitBox = new InfoBox({
 	content: ""
 	,closeBoxURL: ""
-	,pixelOffset: new google.maps.Size(70,-20)
+	,pixelOffset: new google.maps.Size(30,-20)
 	,boxClass: "twitBox"
+})
+
+Map.prototype.fbBox = new InfoBox({
+	content: ""
+	,closeBoxURL: ""
+	,pixelOffset: new google.maps.Size(60,-20)
+	,boxClass: "fbBox"
 })
 
 
@@ -100,9 +107,10 @@ function addMarker(news, geoLocation){
 		map.twitBox.open(map.mapDisplay, marker);
 
 		var twitterIcon = document.createElement("img");
+		twitterIcon.id = "twitterIcon";
 		twitterIcon.src = "twitterIcon.gif";
-		twitterIcon.height = "50";
-		twitterIcon.width = "50";
+		twitterIcon.height = "25";
+		twitterIcon.width = "25";
 
 		//twitter Feeds are hidden until user mouses over
 		var twitterFeeds = document.createElement("div");
@@ -110,7 +118,7 @@ function addMarker(news, geoLocation){
 
 		//create a twitter wrapper to store the twitter icon img tag and tweets
 		var twitterWrapper = document.createElement("div");
-		twitterWrapper.id = "twitterWrapperShown";
+		twitterWrapper.id = "twitterWrapper";
 		twitterWrapper.appendChild(twitterIcon);
 		twitterWrapper.appendChild(twitterFeeds);
 
@@ -122,6 +130,36 @@ function addMarker(news, geoLocation){
 		});
 		$(twitterWrapper).mouseleave(function(){
 			twitterFeeds.className = "twitterFeedsHidden";
+		});
+
+
+		//create facebook infobox
+		map.fbBox.open(map.mapDisplay, marker);
+
+		var fbIcon = document.createElement("img");
+		fbIcon.id = "fbIcon";
+		fbIcon.src = "facebookIcon.png";
+		fbIcon.height = "25";
+		fbIcon.width = "25";
+
+		//facebook Feeds are hidden until user mouses over
+		var fbFeeds = document.createElement("div");
+		fbFeeds.className = "fbFeedsHidden";
+
+		//create a facebook wrapper to store the facebook icon img tag and tweets
+		var fbWrapper = document.createElement("div");
+		fbWrapper.id = "fbWrapper";
+		fbWrapper.appendChild(fbIcon);
+		fbWrapper.appendChild(fbFeeds);
+
+		map.fbBox.setContent(fbWrapper);
+
+		//create event for mouse over on fb box
+		$(fbWrapper).mouseenter(function(){
+			fbFeeds.className = "fbFeedsRevealed";
+		});
+		$(fbWrapper).mouseleave(function(){
+			fbFeeds.className = "fbFeedsHidden";
 		});
 	});
 
@@ -140,6 +178,7 @@ function populateMap(newsDataArray){
 }
 
 
-getNews("");
-
+document.getElementById("displayNews").onclick = function(){
+	getNews(document.getElementById("searchTerm").value);
+}
 

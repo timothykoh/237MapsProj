@@ -98,10 +98,10 @@ body{
 
 .newsBox{
 	width: 300px;
-	height: 100px;
+	height: 150px;
 	padding: 10px;
 	background-color: #438eff;
-	opacity: 0.75;
+	opacity: 0.9;
 	border: 3px solid #ef802e;
 	box-shadow: 0px 0px 20px #ef802e;
 	border-radius: 15px;
@@ -138,3 +138,24 @@ body{
     -webkit-transition: all 0.5s;
     -webkit-transform: translate(30px,-30px);
 }
+
+.fbFeedsRevealed{
+	width: 300px;
+	height: 400px;
+	border: 3px solid #000000;
+	background-color: #21ed7c;
+	box-shadow: 0px 0px 20px #000000;
+	border-radius: 15px;
+	opacity: 0.9;
+    -webkit-transition: all 0.5s;
+	-webkit-transform: translate(-200px, -300px);
+
+}
+
+.fbFeedsHidden{
+	width: 0px;
+	height: 0px;
+    -webkit-transition: all 0.5s;
+    -webkit-transform: translate(30px,-30px);
+}
+
