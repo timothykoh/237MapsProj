@@ -3,11 +3,13 @@
 	<head>
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
 		<link href="mapNews.css" rel="stylesheet" type="text/css">
+		<link href="twitter.css" rel="stylesheet" type="text/css">
 		<style type="text/css">
 	    	html { height: 100% }
 	    	body { height: 100% }
 	    </style>
 	    <script type="text/javascript" src="jquery.js"></script>
+	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>                                
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCZua5Ok7N6HCuTvUgF2EzDMt50eq-LoQ8&sensor=false"></script>
 		<script type="text/javascript" src="infobox.js"></script>
 		
@@ -23,26 +25,27 @@
 			<h1>Headlines</h1>
 			<h2>Details</h2>
 			<h3>etc</h3>
-			<h1>Headlines</h1>
-			<h2>Details</h2>
-			<h3>etc</h3>
-			<h1>Headlines</h1>
-			<h2>Details</h2>
-			<h3>etc</h3>
-			<h1>Headlines</h1>
-			<h2>Details</h2>
-			<h3>etc</h3>
-			<h1>Headlines</h1>
-			<h2>Details</h2>
-			<h3>etc</h3>
-			<h1>Headlines</h1>
-			<h2>Details</h2>
-			<h3>etc</h3>
-			<h1>Headlines</h1>
-			<h2>Details</h2>
-			<h3>etc</h3>
+			
+			<div id="output"><h1>Social Media</h1></div>
+			<div class="mainbox">
+				<h2>Twitter Updates</h2>
+			<div id="outputTwitter"></div>
+				</div>
+			<div class="mainbox">
+				<h2>FB Updates</h2>
+			<div id="outputFb"></div>
+				</div>
+			<div class="mainbox">
+				<h2>Blog Posts</h2>
+			<div id="outputBlog"></div>
+				</div>
+
 		</div>
 		<div id="mainMap"></div>
+
+
+
+		<script type="text/javascript" src="socialmedia.js"></script> 
 		<script type="text/javascript" src="news.js"></script>
 		<script type="text/javascript" src="mapNews.js"></script>
 	</body>

@@ -93,6 +93,9 @@ function addMarker(news, geoLocation){
 		
 		var headline = document.createElement("h1");
 		headline.innerHTML = this.headline;
+////////////////////////////* nicky adding social widget when marker is added*/////////////////
+		console.log(this.headline+'addmarker nicky'+typeof(this.headline));
+		getSearch(this.headline);                       //calling social media widget function
 		var content = document.createElement("h2");
 		content.innerHTML = this.content;
 
@@ -181,4 +184,5 @@ function populateMap(newsDataArray){
 document.getElementById("displayNews").onclick = function(){
 	getNews(document.getElementById("searchTerm").value);
 }
+
 

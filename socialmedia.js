@@ -1,19 +1,19 @@
 
 
 
-function getSearch(){
-    getFb();
+function getSearch(keyword){
+    getFb(keyword);
     console.log('Searching1');
-    getTweets();
+    getTweets(keyword);
     console.log('Searching2');
-    getBlog();
+    getBlog(keyword);
     console.log('Searching3');
 
 }
 
-function getFb(){
-var str= String($( "#searchTerm" ).val());
-
+function getFb(keyword){
+var str= keyword;
+console.log(str+'getFB');
 var fbquery = "https://graph.facebook.com/search?q={"+
     str+
     "}&type=post";
@@ -33,6 +33,7 @@ $.getJSON(fbquery, function(data){
    			if (this.message && this.message.length<300 && this.message.length>100){
              
              var fbUpdate='<div class="tweet"><div class="tweet-left"><a target="_blank" href="'+useridurl+'"><img width="48" height="48" alt="'+useridurl+' on FB" src="'+userpic+'" /></a></div><div class="tweet-right"><p class="text">'+message+'</p></div><br style="clear: both;" /></div>';
+             $("#outputFb").empty();
              $("#outputFb").append(fbUpdate);
              counter+=1;
     			}                
@@ -45,9 +46,9 @@ $.getJSON(fbquery, function(data){
 
 
 
-function getTweets(){
+function getTweets(keyword){
 
-    var searchterm = $( "#searchTerm" ).val();
+    var searchterm = keyword;
 
     var url= "http://search.twitter.com/search.json?q="+
         searchterm + 
@@ -56,7 +57,7 @@ function getTweets(){
         $(data.results).each(function(i,v)
                 {
                     var tweet='<div class="tweet"><div class="tweet-left"><a target="_blank" href="http://twitter.com/'+this.from_user+'"><img width="48" height="48" alt="'+this.from_user+' on Twitter" src="'+this.profile_image_url+'" /></a></div><div class="tweet-right"><p class="text">'+this.text+'</p></div><br style="clear: both;" /></div>';
-      
+        $("#outputTwitter").empty();
         $("#outputTwitter").append(tweet);
                     
         });
@@ -89,13 +90,14 @@ function searchComplete() {
       var blogSearchResults="<a href="+link+">"+title+"</a></br>"; 
       console.log(blogSearchResults);
       //var blogSearchResults=<a target="_blank" href='link'><p class="text">title</p></a>;
+      $("#outputBlog").empty();
       $("#outputBlog").append(blogSearchResults);
     }
   }
 }
 
-function getBlog() {
-  var SearchTerm= $( "#searchTerm" ).val();
+function getBlog(keyword) {
+  var SearchTerm= keyword;
   console.log(SearchTerm);
   // Create a BlogSearch instance.
   blogSearch = new google.search.BlogSearch();

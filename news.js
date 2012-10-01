@@ -74,6 +74,24 @@ function callback1(data) {
             if (results[i].multimedia.length > 0) {
                 article.thumbnail = results[i].multimedia[0].url;
             }
+/***********************
+****** nicky edit start***
+************************/
+            /*
+            else{
+                
+                console.log("jabajaba"+article.keywords+"hihi"+article.headline);
+                getMissingPic(article.headline);
+                article.thumbnail=window.missingPic; 
+                console.log(window.missingPic+"cheetah"+ article.thumbnail); 
+                
+
+            }
+            */
+
+
+
+
             article.picture = "";
             
             ret.push(article);
@@ -107,3 +125,48 @@ function callback2(data) {
     
     populateMap(ret);
 }
+
+
+
+//////////////////////////////////////*****************nickys trial method to get missing pics*//////////////////
+
+/*
+google.load('search', '1');
+
+window.missingPic='heyyou'
+
+function searchComplete(searcher) {
+  // Check that we got results
+  if (searcher.results && searcher.results.length > 0) {
+   
+
+    // Loop through our results, printing them to the page.
+    var results = searcher.results;
+      var result = results[0];
+    console.log(result.tbUrl+'searchomplete happening');
+
+    window.missingPic= result.tbUrl;
+    console.log(window.missingPic+'heybaby');
+    }
+  }
+
+
+function getMissingPic(searchterm) {
+    console.log('getMissingPic searching')
+  // Our ImageSearch instance.
+  var imageSearch = new google.search.ImageSearch();
+
+  // Restrict to extra large images only
+  imageSearch.setRestriction(google.search.ImageSearch.RESTRICT_IMAGESIZE,
+                             google.search.ImageSearch.IMAGESIZE_MEDIUM);
+
+  // Here we set a callback so that anytime a search is executed, it will call
+  // the searchComplete function and pass it our ImageSearch searcher.
+  // When a search completes, our ImageSearch object is automatically
+  // populated with the results.
+  imageSearch.setSearchCompleteCallback(this, searchComplete, [imageSearch]);
+
+  // Find me a beautiful car.
+  imageSearch.execute(searchterm);
+}
+*/
