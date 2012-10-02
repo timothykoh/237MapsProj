@@ -7,23 +7,9 @@ function Map(){
 Map.prototype.infoBox = new InfoBox({	
 	content: ""
 	,closeBoxURL: ""
-	,pixelOffset: new google.maps.Size(-170,-210)
+	,pixelOffset: new google.maps.Size(-150,-280)
 	,boxClass: "newsBox"
 });
-
-Map.prototype.twitBox = new InfoBox({
-	content: ""
-	,closeBoxURL: ""
-	,pixelOffset: new google.maps.Size(30,-20)
-	,boxClass: "twitBox"
-})
-
-Map.prototype.fbBox = new InfoBox({
-	content: ""
-	,closeBoxURL: ""
-	,pixelOffset: new google.maps.Size(60,-20)
-	,boxClass: "fbBox"
-})
 
 
 var map = new Map();
@@ -32,7 +18,7 @@ window.onload = function(){
 	var mapOptions = {
 		center: new google.maps.LatLng(30,0 ),
 		zoom: 2,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
+		mapTypeId: google.maps.MapTypeId.HYBRID
 	};
 	map.mapDisplay = new google.maps.Map(document.getElementById("mainMap"), mapOptions);
 }
@@ -78,7 +64,7 @@ function addMarker(news, geoLocation){
 		headline: news.headline,
 		content: news.abstract,
 		url: news.url,
-		title: "random"
+		title: news.url
 	});
 
 	google.maps.event.addListener(marker, 'mouseover', function() {
@@ -107,65 +93,6 @@ function addMarker(news, geoLocation){
 
 		map.infoBox.setContent(infoBoxContent);
 		
-
-		//create twitter infobox
-		map.twitBox.open(map.mapDisplay, marker);
-
-		var twitterIcon = document.createElement("img");
-		twitterIcon.id = "twitterIcon";
-		twitterIcon.src = "twitterIcon.gif";
-		twitterIcon.height = "25";
-		twitterIcon.width = "25";
-
-		//twitter Feeds are hidden until user mouses over
-		var twitterFeeds = document.createElement("div");
-		twitterFeeds.className = "twitterFeedsHidden";
-
-		//create a twitter wrapper to store the twitter icon img tag and tweets
-		var twitterWrapper = document.createElement("div");
-		twitterWrapper.id = "twitterWrapper";
-		twitterWrapper.appendChild(twitterIcon);
-		twitterWrapper.appendChild(twitterFeeds);
-
-		map.twitBox.setContent(twitterWrapper);
-
-		//create event for mouse over on twit box
-		$(twitterWrapper).mouseenter(function(){
-			twitterFeeds.className = "twitterFeedsRevealed";
-		});
-		$(twitterWrapper).mouseleave(function(){
-			twitterFeeds.className = "twitterFeedsHidden";
-		});
-
-
-		//create facebook infobox
-		map.fbBox.open(map.mapDisplay, marker);
-
-		var fbIcon = document.createElement("img");
-		fbIcon.id = "fbIcon";
-		fbIcon.src = "facebookIcon.png";
-		fbIcon.height = "25";
-		fbIcon.width = "25";
-
-		//facebook Feeds are hidden until user mouses over
-		var fbFeeds = document.createElement("div");
-		fbFeeds.className = "fbFeedsHidden";
-
-		//create a facebook wrapper to store the facebook icon img tag and tweets
-		var fbWrapper = document.createElement("div");
-		fbWrapper.id = "fbWrapper";
-		fbWrapper.appendChild(fbIcon);
-		fbWrapper.appendChild(fbFeeds);
-
-		map.fbBox.setContent(fbWrapper);
-
-		//create event for mouse over on fb box
-		$(fbWrapper).mouseenter(function(){
-			fbFeeds.className = "fbFeedsRevealed";
-		});
-		$(fbWrapper).mouseleave(function(){
-			fbFeeds.className = "fbFeedsHidden";
-		});
 	});
 
 	google.maps.event.addListener(marker, 'click', function(){

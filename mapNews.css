@@ -52,6 +52,7 @@ table {
 
 html{
 	height: 100%;
+	background-image: url(images/mainBackground.png);
 }
 body{
 	height: 100%
@@ -63,24 +64,47 @@ body{
 #mainHeading{
 	font-family: "Rockwell", sans-serif;
 	font-style: bold;
-	font-size: 50px;
-	width: 300px;
+	font-size: 70px;
+	color: #ff003c;
+	text-shadow: -1px -1px 5px #000000, -1px 1px 5px #000000, 1px -1px 5px #000000, 0px 0px 5px #000000;
+	width: 400px;
 	margin:auto;
-	margin-bottom: 30px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+#subHeading{
+	font-family: "Rockwell", sans-serif;
+	font-style: bold;
+	font-size: 20px;
+	color: #ff003c;
+	text-shadow: -1px -1px 5px #000000, -1px 1px 5px #000000, 1px -1px 5px #000000, 0px 0px 5px #000000;
+	width: 400px;
+	position: absolute;
+	margin-left: 200px;
+	
 }
 
 #sideBar{
-	border: 1px solid #000000;
+	margin-left: 30px;
+	border: 3px solid #000000;
+	border-radius: 15px;
 	font-family: "Rockwell";
 	width: 300px;
+	min-height: 725px;
 	padding: 20px;
 	margin-right: 30px;
 	float: left;
+	background-image: url(images/sidebarBackground.png)
 }
 
 #sideBar h1{
 	font-size: 30px;
-	margin-top: 30px;
+	color: #f900bc;
+	text-shadow: -1px -1px 5px #000000, -1px 1px 5px #000000, 1px -1px 5px #000000, 0px 0px 5px #000000;
+	margin-top: 20px;
+	margin-bottom: 10px;
+
 }
 
 #sideBar h2{
@@ -93,69 +117,270 @@ body{
 
 #mainMap{
 	width: 70%;
-	height: 100%;
+	height: 80%;
+	border-radius: 15px;
 }
 
 .newsBox{
 	width: 300px;
-	height: 150px;
-	padding: 10px;
-	background-color: #438eff;
-	opacity: 0.9;
-	border: 3px solid #ef802e;
-	box-shadow: 0px 0px 20px #ef802e;
-	border-radius: 15px;
-	font-family: "Rockwell", serif;
-	color: #d30000;
+	height: 235px;
+	opacity: 0.90;
+	font-family: "Arial", serif;
+	background-image: url(images/ipad.png);
+	background-size: 300px 235px;
+	background-repeat: no-repeat;
 }
 
 .newsBox h1{
-	font-size: 15px;
+	margin-left: 40px;
+	margin-top: 40px;
+	margin-right: 40px;
+	font-size: 18px;
 	font-weight: 900;
+	color: #ff003c;
+	text-shadow: -1px -1px 5px #000000, -1px 1px 5px #000000, 1px -1px 5px #000000, 0px 0px 5px #000000;
 }
 
 .newsBox h2{
-	margin-top: 10px;
-	font-size: 12px;
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 15px;
+	font-size: 14px;
+	color: #ffffff;
 }
 
-.twitterFeedsRevealed{
-	width: 300px;
-	height: 400px;
-	border: 3px solid #000000;
-	background-color: #fea9a9;
-	box-shadow: 0px 0px 20px #000000;
-	border-radius: 15px;
-	opacity: 0.9;
-    -webkit-transition: all 0.5s;
-	-webkit-transform: translate(-200px, -300px);
 
+
+
+.newsCategories span{
+	display: block;
+	margin-bottom: 5px;
 }
 
-.twitterFeedsHidden{
-	width: 0px;
-	height: 0px;
-    -webkit-transition: all 0.5s;
-    -webkit-transform: translate(30px,-30px);
+
+
+/*******************************
+***** Categories Styling *******
+*******************************/
+
+#catNews {
+	width:25%;
+	-moz-box-shadow:inset 0px 1px 0px 0px #fc779c;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fc779c;
+	box-shadow:inset 0px 1px 0px 0px #fc779c;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #db0025), color-stop(1, #e63754) );
+	background:-moz-linear-gradient( center top, #db0025 5%, #e63754 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#db0025', endColorstr='#e63754');
+	background-color:#db0025;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #f04a4a;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 32px;
+	text-decoration:none;
+}
+#catNews:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e63754), color-stop(1, #db0025) );
+	background:-moz-linear-gradient( center top, #e63754 5%, #db0025 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e63754', endColorstr='#db0025');
+	background-color:#e63754;
+}
+#catNews:active {
+	position:relative;
+	top:1px;
 }
 
-.fbFeedsRevealed{
-	width: 300px;
-	height: 400px;
-	border: 3px solid #000000;
-	background-color: #21ed7c;
-	box-shadow: 0px 0px 20px #000000;
-	border-radius: 15px;
-	opacity: 0.9;
-    -webkit-transition: all 0.5s;
-	-webkit-transform: translate(-200px, -300px);
-
+#catPolitics{
+	width: 30%;
+	-moz-box-shadow:inset 0px 1px 0px 0px #f0c1a1;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f0c1a1;
+	box-shadow:inset 0px 1px 0px 0px #f0c1a1;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff5100), color-stop(1, #f09839) );
+	background:-moz-linear-gradient( center top, #ff5100 5%, #f09839 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5100', endColorstr='#f09839');
+	background-color:#ff5100;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #eba861;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+}
+#catPolitics:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f09839), color-stop(1, #ff5100) );
+	background:-moz-linear-gradient( center top, #f09839 5%, #ff5100 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09839', endColorstr='#ff5100');
+	background-color:#f09839;
+}
+#catPolitics:active {
+	position:relative;
+	top:1px;
+}
+#catBusiness {
+	-moz-box-shadow:inset 0px 1px 0px 0px #8ec2f5;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #8ec2f5;
+	box-shadow:inset 0px 1px 0px 0px #8ec2f5;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #003fc7), color-stop(1, #3d77db) );
+	background:-moz-linear-gradient( center top, #003fc7 5%, #3d77db 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#003fc7', endColorstr='#3d77db');
+	background-color:#003fc7;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #166ec7;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 32px;
+	text-decoration:none;
+}
+#catBusiness:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3d77db), color-stop(1, #003fc7) );
+	background:-moz-linear-gradient( center top, #3d77db 5%, #003fc7 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d77db', endColorstr='#003fc7');
+	background-color:#3d77db;
+}
+#catBusiness:active {
+	position:relative;
+	top:1px;
 }
 
-.fbFeedsHidden{
-	width: 0px;
-	height: 0px;
-    -webkit-transition: all 0.5s;
-    -webkit-transform: translate(30px,-30px);
+#catTech {
+	-moz-box-shadow:inset 0px 1px 0px 0px #b8ff7d;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #b8ff7d;
+	box-shadow:inset 0px 1px 0px 0px #b8ff7d;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #009405), color-stop(1, #67de38) );
+	background:-moz-linear-gradient( center top, #009405 5%, #67de38 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#009405', endColorstr='#67de38');
+	background-color:#009405;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #5ee643;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 32px;
+	text-decoration:none;
+}
+#catTech:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #67de38), color-stop(1, #009405) );
+	background:-moz-linear-gradient( center top, #67de38 5%, #009405 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#67de38', endColorstr='#009405');
+	background-color:#67de38;
+}
+#catTech:active {
+	position:relative;
+	top:1px;
 }
 
+#catSports {
+	-moz-box-shadow:inset 0px 1px 0px 0px #de82f0;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #de82f0;
+	box-shadow:inset 0px 1px 0px 0px #de82f0;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7b0094), color-stop(1, #ce34ed) );
+	background:-moz-linear-gradient( center top, #7b0094 5%, #ce34ed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7b0094', endColorstr='#ce34ed');
+	background-color:#7b0094;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #cf59e6;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 32px;
+	text-decoration:none;
+}
+#catSports:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce34ed), color-stop(1, #7b0094) );
+	background:-moz-linear-gradient( center top, #ce34ed 5%, #7b0094 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce34ed', endColorstr='#7b0094');
+	background-color:#ce34ed;
+}
+#catSports:active {
+	position:relative;
+	top:1px;
+}
+
+#catArt {
+	-moz-box-shadow:inset 0px 1px 0px 0px #9ccbf7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #9ccbf7;
+	box-shadow:inset 0px 1px 0px 0px #9ccbf7;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #107fc9), color-stop(1, #63d4f0) );
+	background:-moz-linear-gradient( center top, #107fc9 5%, #63d4f0 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#107fc9', endColorstr='#63d4f0');
+	background-color:#107fc9;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #66aef2;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+}
+#catArt:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #63d4f0), color-stop(1, #107fc9) );
+	background:-moz-linear-gradient( center top, #63d4f0 5%, #107fc9 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#63d4f0', endColorstr='#107fc9');
+	background-color:#63d4f0;
+}
+#catArt:active {
+	position:relative;
+	top:1px;
+}
+
+#catTravel {
+	-moz-box-shadow:inset 0px 1px 0px 0px #e082d5;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #e082d5;
+	box-shadow:inset 0px 1px 0px 0px #e082d5;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff00ae), color-stop(1, #ed53d1) );
+	background:-moz-linear-gradient( center top, #ff00ae 5%, #ed53d1 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00ae', endColorstr='#ed53d1');
+	background-color:#ff00ae;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #eb5bda;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+}
+#catTravel:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ed53d1), color-stop(1, #ff00ae) );
+	background:-moz-linear-gradient( center top, #ed53d1 5%, #ff00ae 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed53d1', endColorstr='#ff00ae');
+	background-color:#ed53d1;
+}
+#catTravel:active {
+	position:relative;
+	top:1px;
+}
+
+/*******************************
+***End of Categories Styling ***
+*******************************/
