@@ -12,7 +12,7 @@ function getNews(query) {
         // Article search
         urls.push("http://content.guardianapis.com/search?q=" + query + "&section=world&show-fields=thumbnail,body&format=json&api-key=g9tgx9ttmsnbskgq7g3k5pwt&callback=callback3");
         
-        q_urls.push({q: "http://api.nytimes.com/svc/search/v1/article?format=json&query=" + query + "&api-key=ffc6cf5f46dcd7158c8dd03d5bbd071a:1:66718702", callback: "callback2"});
+        q_urls.push({q: "http://api.nytimes.com/svc/search/v1/article?format=json&query=" + query + "&fields=title,des_facet,per_facet,geo_facet,org_facet,body,url,small_image,small_image_url,small_image_height,small_image_width&api-key=ffc6cf5f46dcd7158c8dd03d5bbd071a:1:66718702", callback: "callback2"});
     }
     
     for(i=0; i<q_urls.length; i++) {
@@ -70,19 +70,16 @@ function callback1(data) {
     var article;
     
     for(var i=0; i<results.length; i++) {
-        if (results[i].geo_facet.length > 0) {
+        if (results[i].geo_facet.length > 0 && results[i].multimedia.length > 0) {
             article = {};
             article.headline = results[i].title;
             article.abstract = results[i].abstract;
             article.location = extractLocation(results[i].geo_facet, results[i].abstract);
             article.url = results[i].url;
             article.keywords = makeKeywords(results[i]);
-            article.thumbnail = {url: "images/new-york-times-logo.jpg", width: 200/3, height: 157/3};
-            if (results[i].multimedia.length > 0) {
-                article.thumbnail = {url: results[i].multimedia[0].url, 
-                                     width: results[i].multimedia[0].width, 
-                                     height: results[i].multimedia[0].height};
-            }
+            article.thumbnail = {url: results[i].multimedia[0].url, 
+                                 width: results[i].multimedia[0].width, 
+                                 height: results[i].multimedia[0].height};
 /***********************
 ****** nicky edit start***
 ************************/
@@ -118,15 +115,17 @@ function callback2(data) {
     
     for(var i=0; i<results.length; i++) {
         var bodyp = results[i].body.split("&mdash;");
-        if (bodyp.length > 1) {
+        if (bodyp.length > 1 && results[i].small_image) {
             article = {};
             article.headline = results[i].title;
             article.abstract = results[i].body + "...";
             article.location = bodyp[0];
             article.url = results[i].url;
-            article.keywords = ""; //TODO
-            article.thumbnail = {url: "images/new-york-times-logo.jpg", width: 200/3, height: 157/3};
-            article.picture = ""; //TODO
+            article.keywords = makeKeywords(results[i]);
+            article.thumbnail = {url: results[i].small_image_url,
+                                 width: results[i].small_image_width,
+                                 height: results[i].small_image_height};
+            article.picture = "";
             
             ret.push(article);
         }
@@ -154,7 +153,7 @@ function callback3(data) {
             }
         }
         
-        if (maxfreq > 0) {
+        if (maxfreq > 0 && results[i].fields.thumbnail) {
             article = {};
             article.headline = results[i].webTitle;
             var sentences = bodyhtml.replace(/<(?:.|\n)*?>/gm, " ").split(".");
@@ -169,11 +168,8 @@ function callback3(data) {
             var idparts = results[i].id.split("/");
             var idtitle = idparts[idparts.length-1].replace("-", " ");
             article.keywords = idtitle;
-            article.thumbnail = {url: "images/guardian-logo.jpg", width: 200/3, height: 35/3};
-            if (results[i].fields.thumbnail) {
-                article.thumbnail = {url: results[i].fields.thumbnail, width: 140/2, height: 84/2};
-            }
-            article.picture = ""; //TODO
+            article.thumbnail = {url: results[i].fields.thumbnail, width: 140/2, height: 84/2};
+            article.picture = "";
             
             ret.push(article);
         }
