@@ -96,7 +96,7 @@ function addMarker(news, geoLocation){
 ////////////////////////////* nicky adding social widget when marker is added*/////////////////
 		console.log(this.headline+'addmarker nicky'+typeof(this.headline));
 		getSearch(this.headline);                       //calling social media widget function
-		//$("#twittertab").addClass("active");
+		
 
 		var content = document.createElement("h2");
 		content.innerHTML = this.content;

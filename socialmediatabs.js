@@ -3,7 +3,7 @@ $(document).ready(function(){
     $("#tabs li").click(function() {
         //  First remove class "active" from currently active tab
         $("#tabs li").removeClass('active');
- 
+        console.log('socialmediatabs is working');
         //  Now add class "active" to the selected/clicked tab
         $(this).addClass("active");
  
@@ -15,7 +15,7 @@ $(document).ready(function(){
  
         //  Show the selected tab content
         $(selected_tab).fadeIn();
- 
+        
         //  At the end, we add return false so that the click on the link is not executed
         return false;
     });

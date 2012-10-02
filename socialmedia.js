@@ -51,11 +51,13 @@ $.getJSON(fbquery, function(data){
 function getTweets(keyword){
 
     var searchterm = keyword;
-    $("#outputTwitter").empty();
+    
+    
     var url= "http://search.twitter.com/search.json?q="+
         searchterm + 
         "&rpp=4&callback=?";
     $.getJSON( url, function( data ) {
+      $("#outputTwitter").empty();
       var counter=0;
         $(data.results).each(function(i,v){
           if (counter<5){

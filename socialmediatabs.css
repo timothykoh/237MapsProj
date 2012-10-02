@@ -1,8 +1,7 @@
-#tabs_wrapper {
-    width: 422px;
-}
+
 #tabs_container {
-    border-bottom: 3px solid #000000;
+    font-size: 25px ;
+    border-bottom: 1px solid #ccc;
 }
 #tabs {
     list-style: none;
@@ -13,7 +12,7 @@
 #tabs li {
     display: inline;
 }
-#tabs li a {
+#tabs li a {   
     border: 1px solid #ccc;
     padding: 4px 6px;
     text-decoration: none;
@@ -30,6 +29,7 @@
     padding: 4px 6px;
 }
 #tabs li.active a {
+    top:-2px;
     border-bottom: 1px solid #fff;
     background-color: #fff;
     padding: 4px 6px 5px 6px;
@@ -51,13 +51,15 @@
     padding-left: 24px;
 }
  
-#tabs_content_container {
-    border: 1px solid #ccc;
-    border-top: none;
-    padding: 10px;
-    width: 400px;
-}
+
 .tab_content {
+    padding-top: 5px;
     display: none;
 }
 
+.socialthumb {
+    
+    position:relative;
+    left:-2px;
+    top:5px;
+}
