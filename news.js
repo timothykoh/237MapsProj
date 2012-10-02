@@ -77,9 +77,11 @@ function callback1(data) {
             article.location = extractLocation(results[i].geo_facet, results[i].abstract);
             article.url = results[i].url;
             article.keywords = makeKeywords(results[i]);
-            article.thumbnail = "images/new-york-times-logo.jpg";
+            article.thumbnail = {url: "images/new-york-times-logo.jpg", width: 200/3, height: 157/3};
             if (results[i].multimedia.length > 0) {
-                article.thumbnail = results[i].multimedia[0].url;
+                article.thumbnail = {url: results[i].multimedia[0].url, 
+                                     width: results[i].multimedia[0].width, 
+                                     height: results[i].multimedia[0].height};
             }
 /***********************
 ****** nicky edit start***
@@ -123,7 +125,7 @@ function callback2(data) {
             article.location = bodyp[0];
             article.url = results[i].url;
             article.keywords = ""; //TODO
-            article.thumbnail = "images/new-york-times-logo.jpg";
+            article.thumbnail = {url: "images/new-york-times-logo.jpg", width: 200/3, height: 157/3};
             article.picture = ""; //TODO
             
             ret.push(article);
@@ -140,11 +142,11 @@ function callback3(data) {
     var article;
     
     for(var i=0; i<results.length; i++) {
-        var bodytext = results[i].fields.body;
+        var bodyhtml = results[i].fields.body;
         var maxfreq = 0;
         var maxcountry = "";
         for(var j=0; j<countries.length; j++) {
-            parts = bodytext.split(countries[j]);
+            parts = bodyhtml.split(countries[j]);
             var freq = parts.length;
             if (freq > maxfreq) {
                 maxcountry = countries[j];
@@ -155,15 +157,21 @@ function callback3(data) {
         if (maxfreq > 0) {
             article = {};
             article.headline = results[i].webTitle;
-            article.abstract = "";
+            var sentences = bodyhtml.replace(/<(?:.|\n)*?>/gm, " ").split(".");
+            var bodytext = "";
+            for(var j=0; j<sentences.length; j++) {
+                bodytext += sentences[j] + ".";
+                if (bodytext.length > 200) break;
+            }
+            article.abstract = bodytext + "...";
             article.location = maxcountry;
             article.url = results[i].webUrl;
             var idparts = results[i].id.split("/");
             var idtitle = idparts[idparts.length-1].replace("-", " ");
             article.keywords = idtitle;
-            article.thumbnail = "images/guardian-logo.jpg";
+            article.thumbnail = {url: "images/guardian-logo.jpg", width: 200/3, height: 35/3};
             if (results[i].fields.thumbnail) {
-                article.thumbnail = results[i].fields.thumbnail;
+                article.thumbnail = {url: results[i].fields.thumbnail, width: 140/2, height: 84/2};
             }
             article.picture = ""; //TODO
             

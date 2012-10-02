@@ -57,9 +57,9 @@ function addMarker(news, geoLocation){
 	var lat = geoLocation.Xa;
 	var lng = geoLocation.Ya;
 	var latLng = new google.maps.LatLng(lat, lng);
-	var imgWidth = 50;
-	var imgHeight = 50;
-	var img = new google.maps.MarkerImage(news.thumbnail, //url
+	var imgWidth = news.thumbnail.width;
+	var imgHeight = news.thumbnail.height;
+	var img = new google.maps.MarkerImage(news.thumbnail.url, //url
 											new google.maps.Size(imgWidth,imgHeight), //size
 											new google.maps.Point(0,0), //origin - position of image;
 											new google.maps.Point(imgWidth/2,imgHeight/2), //anchor
