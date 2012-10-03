@@ -52,6 +52,7 @@ table {
 
 html{
 	height: 100%;
+	margin: 20px;
 	background-image: url(images/mainBackground.png);
 }
 body{

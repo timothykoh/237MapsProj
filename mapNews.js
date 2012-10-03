@@ -16,7 +16,7 @@ var map = new Map();
 
 window.onload = function(){
 	var mapOptions = {
-		center: new google.maps.LatLng(30,0 ),
+		center: new google.maps.LatLng(0,0),
 		zoom: 2,
 		mapTypeId: google.maps.MapTypeId.HYBRID
 	};
@@ -67,7 +67,8 @@ function addMarker(news, geoLocation){
 		headline: news.headline,
 		content: news.abstract,
 		url: news.url,
-		title: news.url
+		title: news.url,
+		animation: google.maps.Animation.BOUNCE,
 	});
 
 	google.maps.event.addListener(marker, 'mouseover', function() {
@@ -103,6 +104,9 @@ function addMarker(news, geoLocation){
 	google.maps.event.addListener(marker, 'click', function(){
 		window.open(this.url);
 	});
+
+	setTimeout(function(){ marker.setAnimation(null); }, 750);
+
 
 
 }
