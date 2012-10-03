@@ -23,7 +23,8 @@ window.onload = function(){
 	map.mapDisplay = new google.maps.Map(document.getElementById("mainMap"), mapOptions);
 }
 
-
+/*
+// Deprecated because news.js calls addMarker directly
 function addNewsToMap(news) {
 	//determine the lat and lng of the news event, then add marker
 	var geocoder = new google.maps.Geocoder();  
@@ -37,7 +38,7 @@ function addNewsToMap(news) {
 	  }
 	});
 }
-
+*/
 
 function addMarker(news, geoLocation){	
 	var lat = geoLocation.Xa;
@@ -47,9 +48,11 @@ function addMarker(news, geoLocation){
 	var imgHeight = news.thumbnail.height;
 	var img = new google.maps.MarkerImage(news.thumbnail.url, //url
 											new google.maps.Size(imgWidth,imgHeight), //size
-											new google.maps.Point(0,0), //origin - position of image;
-											new google.maps.Point(imgWidth/2,imgHeight/2), //anchor
-											new google.maps.Size(imgWidth, imgHeight)); //scaled size
+											new google.maps.Point(0,0) //origin - position of image;
+											/*new google.maps.Point(imgWidth/2,imgHeight/2) //anchor
+											new google.maps.Size(imgWidth, imgHeight)*/); //scaled size
+											// Ben: commenting out these properties fixes the image scaling display bug
+											// location isn't as precise, but more important that it works :)
 	//define clickable region
 	var shape = {
 		coord: [0,0 , imgWidth,0 , imgWidth,imgHeight, 0,imgHeight],
@@ -84,10 +87,12 @@ function addMarker(news, geoLocation){
 		getSearch(this.headline);                       //calling social media widget function
 		
 
-		var content = document.createElement("h2");
+		var content = document.createElement("div");
+		content.setAttribute("class", "abstract");
 		content.innerHTML = this.content;
 
 		var infoBoxContent = document.createElement("div");
+		infoBoxContent.setAttribute("class", "newsBoxContent");
 		infoBoxContent.appendChild(headline);
 		infoBoxContent.appendChild(content);
 
@@ -96,19 +101,19 @@ function addMarker(news, geoLocation){
 	});
 
 	google.maps.event.addListener(marker, 'click', function(){
-		window.location.href = this.url;
+		window.open(this.url);
 	});
 
 
 }
 
-
+/*
 function populateMap(newsDataArray){
-	for (var i = 0; i <= 10; i++){
+	for (var i = 0; i <= newsDataArray.length; i++){
 		addNewsToMap(newsDataArray[i]);
 	}	
 }
-
+*/
 
 document.getElementById("displayNews").onclick = function(){
 	getNews(document.getElementById("searchTerm").value);

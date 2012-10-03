@@ -1,4 +1,6 @@
-var countries = ['afghanistan', 'aland islands', 'albania', 'algeria', 'american samoa', 'andorra', 'angola', 'anguilla', 'antarctica', 'antigua and barbuda', 'argentina', 'armenia', 'aruba', 'australia', 'austria', 'azerbaijan', 'bahamas', 'bahrain', 'bangladesh', 'barbados', 'belarus', 'belgium', 'belize', 'benin', 'bermuda', 'bhutan', 'bolivia, plurinational state of', 'bonaire, sint eustatius and saba', 'bosnia and herzegovina', 'botswana', 'bouvet island', 'brazil', 'british indian ocean territory', 'brunei darussalam', 'bulgaria', 'burkina faso', 'burundi', 'cambodia', 'cameroon', 'canada', 'cape verde', 'cayman islands', 'central african republic', 'chad', 'chile', 'china', 'christmas island', 'cocos (keeling) islands', 'colombia', 'comoros', 'congo', 'congo, the democratic republic of the', 'cook islands', 'costa rica', "cote d'ivoire", 'croatia', 'cuba', 'curacao', 'cyprus', 'czech republic', 'denmark', 'djibouti', 'dominica', 'dominican republic', 'ecuador', 'egypt', 'el salvador', 'equatorial guinea', 'eritrea', 'estonia', 'ethiopia', 'falkland islands (malvinas)', 'faroe islands', 'fiji', 'finland', 'france', 'french guiana', 'french polynesia', 'french southern territories', 'gabon', 'gambia', 'georgia', 'germany', 'ghana', 'gibraltar', 'greece', 'greenland', 'grenada', 'guadeloupe', 'guam', 'guatemala', 'guernsey', 'guinea', 'guinea-bissau', 'guyana', 'haiti', 'heard island and mcdonald islands', 'holy see (vatican city state)', 'honduras', 'hong kong', 'hungary', 'iceland', 'india', 'indonesia', 'iran, islamic republic of', 'iraq', 'ireland', 'isle of man', 'israel', 'italy', 'jamaica', 'japan', 'jersey', 'jordan', 'kazakhstan', 'kenya', 'kiribati', "korea, democratic people's republic of", 'korea, republic of', 'kuwait', 'kyrgyzstan', "lao people's democratic republic", 'latvia', 'lebanon', 'lesotho', 'liberia', 'libya', 'liechtenstein', 'lithuania', 'luxembourg', 'macao', 'macedonia, the former yugoslav republic of', 'madagascar', 'malawi', 'malaysia', 'maldives', 'mali', 'malta', 'marshall islands', 'martinique', 'mauritania', 'mauritius', 'mayotte', 'mexico', 'micronesia, federated states of', 'moldova, republic of', 'monaco', 'mongolia', 'montenegro', 'montserrat', 'morocco', 'mozambique', 'myanmar', 'namibia', 'nauru', 'nepal', 'netherlands', 'new caledonia', 'new zealand', 'nicaragua', 'niger', 'nigeria', 'niue', 'norfolk island', 'northern mariana islands', 'norway', 'oman', 'pakistan', 'palau', 'palestinian territory, occupied', 'panama', 'papua new guinea', 'paraguay', 'peru', 'philippines', 'pitcairn', 'poland', 'portugal', 'puerto rico', 'qatar', 'reunion', 'romania', 'russian federation', 'rwanda', 'saint barthelemy', 'saint helena, ascension and tristan da cunha', 'saint kitts and nevis', 'saint lucia', 'saint martin (french part)', 'saint pierre and miquelon', 'saint vincent and the grenadines', 'samoa', 'san marino', 'sao tome and principe', 'saudi arabia', 'senegal', 'serbia', 'seychelles', 'sierra leone', 'singapore', 'sint maarten (dutch part)', 'slovakia', 'slovenia', 'solomon islands', 'somalia', 'south africa', 'south georgia and the south sandwich islands', 'south sudan', 'spain', 'sri lanka', 'sudan', 'suriname', 'svalbard and jan mayen', 'swaziland', 'sweden', 'switzerland', 'syrian arab republic', 'taiwan, province of china', 'tajikistan', 'tanzania, united republic of', 'thailand', 'timor-leste', 'togo', 'tokelau', 'tonga', 'trinidad and tobago', 'tunisia', 'turkey', 'turkmenistan', 'turks and caicos islands', 'tuvalu', 'uganda', 'ukraine', 'united arab emirates', 'united kingdom', 'united states', 'united states minor outlying islands', 'uruguay', 'uzbekistan', 'vanuatu', 'venezuela, bolivarian republic of', 'vietnam', 'virgin islands, british', 'virgin islands, u.s.', 'wallis and futuna', 'western sahara', 'yemen', 'zambia', 'zimbabwe'];
+var countries = ['afghanistan', 'aland islands', 'albania', 'algeria', 'american samoa', 'andorra', 'angola', 'anguilla', 'antarctica', 'antigua and barbuda', 'argentina', 'armenia', 'aruba', 'australia', 'austria', 'azerbaijan', 'bahamas', 'bahrain', 'bangladesh', 'barbados', 'belarus', 'belgium', 'belize', 'benin', 'bermuda', 'bhutan', 'bolivia', 'bonaire', 'bosnia', 'botswana', 'bouvet island', 'brazil', 'british indian ocean territory', 'brunei darussalam', 'bulgaria', 'burkina faso', 'burundi', 'cambodia', 'cameroon', 'canada', 'cape verde', 'cayman islands', 'central african republic', 'chad', 'chile', 'china', 'christmas island', 'cocos islands', 'colombia', 'comoros', 'congo', 'congo', 'cook islands', 'costa rica', "cote d'ivoire", 'croatia', 'cuba', 'curacao', 'cyprus', 'czech republic', 'denmark', 'djibouti', 'dominica', 'dominican republic', 'ecuador', 'egypt', 'el salvador', 'equatorial guinea', 'eritrea', 'estonia', 'ethiopia', 'falkland islands', 'faroe islands', 'fiji', 'finland', 'france', 'french guiana', 'french polynesia', 'french southern territories', 'gabon', 'gambia', 'georgia', 'germany', 'ghana', 'gibraltar', 'greece', 'greenland', 'grenada', 'guadeloupe', 'guam', 'guatemala', 'guernsey', 'guinea', 'guinea-bissau', 'guyana', 'haiti', 'heard island and mcdonald islands', 'vatican city', 'honduras', 'hong kong', 'hungary', 'iceland', 'india', 'indonesia', 'iran', 'iraq', 'ireland', 'isle of man', 'israel', 'italy', 'jamaica', 'japan', 'jersey', 'jordan', 'kazakhstan', 'kenya', 'kiribati', "north korea", 'south korea', 'kuwait', 'kyrgyzstan', "laos", 'latvia', 'lebanon', 'lesotho', 'liberia', 'libya', 'liechtenstein', 'lithuania', 'luxembourg', 'macao', 'macedonia', 'madagascar', 'malawi', 'malaysia', 'maldives', 'mali', 'malta', 'marshall islands', 'martinique', 'mauritania', 'mauritius', 'mayotte', 'mexico', 'micronesia', 'moldova', 'monaco', 'mongolia', 'montenegro', 'montserrat', 'morocco', 'mozambique', 'myanmar', 'namibia', 'nauru', 'nepal', 'netherlands', 'new caledonia', 'new zealand', 'nicaragua', 'niger', 'nigeria', 'niue', 'norfolk island', 'northern mariana islands', 'norway', 'oman', 'pakistan', 'palau', 'palestinian territories', 'panama', 'papua new guinea', 'paraguay', 'peru', 'philippines', 'pitcairn', 'poland', 'portugal', 'puerto rico', 'qatar', 'reunion', 'romania', 'russia', 'rwanda', 'saint barthelemy', 'saint helena', 'saint kitts and nevis', 'saint lucia', 'saint martin', 'saint pierre and miquelon', 'saint vincent and the grenadines', 'samoa', 'san marino', 'sao tome and principe', 'saudi arabia', 'senegal', 'serbia', 'seychelles', 'sierra leone', 'singapore', 'sint maarten', 'slovakia', 'slovenia', 'solomon islands', 'somalia', 'south africa', 'south georgia', 'south sudan', 'spain', 'sri lanka', 'sudan', 'suriname', 'svalbard and jan mayen', 'swaziland', 'sweden', 'switzerland', 'syria', 'taiwan', 'tajikistan', 'tanzania', 'thailand', 'timor leste', 'togo', 'tokelau', 'tonga', 'trinidad and tobago', 'tunisia', 'turkey', 'turkmenistan', 'turks and caicos islands', 'tuvalu', 'uganda', 'ukraine', 'united arab emirates', 'united kingdom', 'england', 'london', 'united states', 'new york', 'washington', 'puerto rico', 'uruguay', 'uzbekistan', 'vanuatu', 'venezuela', 'vietnam', 'virgin islands', 'wallis and futuna', 'western sahara', 'yemen', 'zambia', 'zimbabwe', 'paris', 'berlin', 'tokyo', 'seoul', 'pyongyang', 'beijing', 'california', 'los angeles', 'san francisco', 'baghdad', 'tehran', 'toronto', 'islamabad', 'aleppo', 'damascus', 'jerusalem', 'tel aviv', 'gaza strip', 'beirut', 'cairo'];
+
+var article_queue = [];
 
 function getNews(query) {
     var i;
@@ -42,6 +44,16 @@ function processLocation(s) {
     return s.replace(" (", ", ").replace(")", "");
 }
 
+function preview(fulltext) {
+    var sentences = fulltext.split(".");
+    var preview_text = "";
+    for(var j=0; j<sentences.length; j++) {
+        preview_text += sentences[j] + ".";
+        if (preview_text.length > 200) break;
+    }
+    return preview_text;
+}
+
 function extractLocation(geo_facet, abstract) {
     var i;
     
@@ -63,6 +75,21 @@ function extractLocation(geo_facet, abstract) {
     }
 }
 
+function detectCountry(bodytext) {
+    var bodytextl = bodytext.toLowerCase();
+    var maxfreq = 0;
+    var maxcountry = "";
+    for(var j=0; j<countries.length; j++) {
+        parts = bodytextl.split(countries[j]);
+        var freq = parts.length;
+        if (freq > maxfreq) {
+            maxcountry = countries[j];
+            maxfreq = freq;
+        }
+    }
+    return {country: maxcountry, freq: maxfreq};
+}
+
 // Callback to process newswire data
 function callback1(data) {
     var results = data.query.results.json.results;
@@ -80,6 +107,105 @@ function callback1(data) {
             article.thumbnail = {url: results[i].multimedia[0].url, 
                                  width: results[i].multimedia[0].width, 
                                  height: results[i].multimedia[0].height};
+            article.picture = "";
+            
+            ret.push(article);
+        }
+    }
+      
+    locateAndPopulate(ret);
+}
+
+// Callback to process search data
+function callback2(data) {
+    var results = data.query.results.json.results;
+    var ret = [];
+    var article;
+    
+    for(var i=0; i<results.length; i++) {
+        var bodyp = results[i].body.split("&mdash;");
+        if (bodyp.length > 1 && results[i].small_image) {
+            article = {};
+            article.headline = results[i].title;
+            article.abstract = preview(bodyp[1]) + "...";
+            var country_info = detectCountry(bodyp[1]);
+            if (country_info.freq >= 3) {
+                // Use country
+                article.location = country_info.country;
+            }
+            else {
+                // Use reporting location
+                article.location = bodyp[0];
+            }
+            article.url = results[i].url;
+            article.keywords = makeKeywords(results[i]);
+            article.thumbnail = {url: results[i].small_image_url,
+                                 width: results[i].small_image_width,
+                                 height: results[i].small_image_height};
+            article.picture = "";
+            
+            ret.push(article);
+        }
+    }
+    
+    locateAndPopulate(ret);
+}
+
+// Callback for Guardian
+function callback3(data) {
+    var results = data.response.results;
+    var ret = [];
+    var article;
+    
+    for(var i=0; i<results.length; i++) {
+        if (results[i].fields.body) {
+            var bodytext = results[i].fields.body.replace(/<(?:.|\n)*?>/gm, " ");
+            var country_info = detectCountry(bodytext);
+            
+            if (maxfreq > 0 && results[i].fields.thumbnail) {
+                article = {};
+                article.headline = results[i].webTitle;
+                article.abstract = preview(bodytext) + "...";
+                article.location = country_info.country;
+                article.url = results[i].webUrl;
+                var idparts = results[i].id.split("/");
+                var idtitle = idparts[idparts.length-1].replace("-", " ");
+                article.keywords = idtitle;
+                article.thumbnail = {url: results[i].fields.thumbnail, width: 140/2, height: 84/2};
+                article.picture = "";
+                
+                ret.push(article);
+            }
+        }
+    }
+    
+    locateAndPopulate(ret);
+}
+
+function locateAndPopulate(articles) {
+    article_queue = article_queue.concat(articles);
+}
+
+function clearArticleQueue() {
+    if (article_queue.length > 0) {
+        var top_article = article_queue.shift();
+        
+        var geocoder = new google.maps.Geocoder();  
+        geocoder.geocode({'address': top_article.location}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var geoLocation = results[0].geometry.location;
+                addMarker(top_article, geoLocation);
+            }
+            else {
+                alert("Geocode was not successful for the following reason: " + status);
+            }
+        });
+    }
+}
+
+setInterval(clearArticleQueue, 500);
+
+//////////////////////////////////////*****************nickys trial method to get missing pics*//////////////////
 /***********************
 ****** nicky edit start***
 ************************/
@@ -94,94 +220,6 @@ function callback1(data) {
 
             }
             */
-
-
-
-
-            article.picture = "";
-            
-            ret.push(article);
-        }
-    }
-      
-    populateMap(ret);
-}
-
-// Callback to process search data
-function callback2(data) {
-    var results = data.query.results.json.results;
-    var ret = [];
-    var article;
-    
-    for(var i=0; i<results.length; i++) {
-        var bodyp = results[i].body.split("&mdash;");
-        if (bodyp.length > 1 && results[i].small_image) {
-            article = {};
-            article.headline = results[i].title;
-            article.abstract = results[i].body + "...";
-            article.location = bodyp[0];
-            article.url = results[i].url;
-            article.keywords = makeKeywords(results[i]);
-            article.thumbnail = {url: results[i].small_image_url,
-                                 width: results[i].small_image_width,
-                                 height: results[i].small_image_height};
-            article.picture = "";
-            
-            ret.push(article);
-        }
-    }
-    
-    populateMap(ret);
-}
-
-// Callback for Guardian
-function callback3(data) {
-    var results = data.response.results;
-    var ret = [];
-    var article;
-    
-    for(var i=0; i<results.length; i++) {
-        var bodyhtml = results[i].fields.body;
-        var maxfreq = 0;
-        var maxcountry = "";
-        for(var j=0; j<countries.length; j++) {
-            parts = bodyhtml.split(countries[j]);
-            var freq = parts.length;
-            if (freq > maxfreq) {
-                maxcountry = countries[j];
-                maxfreq = freq;
-            }
-        }
-        
-        if (maxfreq > 0 && results[i].fields.thumbnail) {
-            article = {};
-            article.headline = results[i].webTitle;
-            var sentences = bodyhtml.replace(/<(?:.|\n)*?>/gm, " ").split(".");
-            var bodytext = "";
-            for(var j=0; j<sentences.length; j++) {
-                bodytext += sentences[j] + ".";
-                if (bodytext.length > 200) break;
-            }
-            article.abstract = bodytext + "...";
-            article.location = maxcountry;
-            article.url = results[i].webUrl;
-            var idparts = results[i].id.split("/");
-            var idtitle = idparts[idparts.length-1].replace("-", " ");
-            article.keywords = idtitle;
-            article.thumbnail = {url: results[i].fields.thumbnail, width: 140/2, height: 84/2};
-            article.picture = "";
-            
-            ret.push(article);
-        }
-    }
-    
-    populateMap(ret);
-}
-
-
-
-//////////////////////////////////////*****************nickys trial method to get missing pics*//////////////////
-
 /*
 google.load('search', '1');
 

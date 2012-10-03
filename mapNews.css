@@ -86,14 +86,13 @@ body{
 }
 
 #sideBar{
-	margin-left: 30px;
+	margin: 0px;
 	border: 3px solid #000000;
 	border-radius: 15px;
 	font-family: "Rockwell";
-	width: 300px;
+	width: 25%;
 	min-height: 725px;
 	padding: 20px;
-	margin-right: 30px;
 	float: left;
 	background-image: url(images/sidebarBackground.png)
 }
@@ -117,35 +116,43 @@ body{
 
 #mainMap{
 	width: 70%;
-	height: 80%;
-	border-radius: 15px;
+	height: 100%;
+	float: right;
+	border-radius: 10px;
 }
 
 .newsBox{
 	width: 300px;
 	height: 235px;
 	opacity: 0.90;
-	font-family: "Arial", serif;
+	padding: 0px;
 	background-image: url(images/ipad.png);
 	background-size: 300px 235px;
 	background-repeat: no-repeat;
 }
 
-.newsBox h1{
-	margin-left: 40px;
-	margin-top: 40px;
-	margin-right: 40px;
-	font-size: 18px;
-	font-weight: 900;
+.newsBoxContent{
+    margin: 35px;
+    padding: 0px;
+    height: 165px;
+	font-family: Helvetica, sans-serif;
+	overflow: auto;
+}
+
+.newsBoxContent h1{
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 8px;
+	font-size: 16px;
+	font-weight: 600;
 	color: #ff003c;
 	text-shadow: -1px -1px 5px #000000, -1px 1px 5px #000000, 1px -1px 5px #000000, 0px 0px 5px #000000;
 }
 
-.newsBox h2{
-	margin-left: 40px;
-	margin-right: 40px;
-	margin-top: 15px;
-	font-size: 14px;
+.newsBoxContent .abstract{
+	margin: 0px;
+	font-size: 13px;
 	color: #ffffff;
 }
 
@@ -155,8 +162,24 @@ body{
 .newsCategories span{
 	display: block;
 	margin-bottom: 5px;
+	border-radius:6px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border:1px solid;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial, sans-serif;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 32px;
+	text-align:center;
+	text-decoration:none;
+	cursor:pointer;
 }
-
+.newsCategories span:active {
+    position: relative;
+    top: 1px;
+}
 
 
 /*******************************
@@ -172,27 +195,13 @@ body{
 	background:-moz-linear-gradient( center top, #db0025 5%, #e63754 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#db0025', endColorstr='#e63754');
 	background-color:#db0025;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #f04a4a;
-	display:inline-block;
-	color:#ffffff;
-	font-family:arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 32px;
-	text-decoration:none;
+	border-color:#f04a4a;
 }
 #catNews:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e63754), color-stop(1, #db0025) );
 	background:-moz-linear-gradient( center top, #e63754 5%, #db0025 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e63754', endColorstr='#db0025');
 	background-color:#e63754;
-}
-#catNews:active {
-	position:relative;
-	top:1px;
 }
 
 #catPolitics{
@@ -204,27 +213,13 @@ body{
 	background:-moz-linear-gradient( center top, #ff5100 5%, #f09839 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5100', endColorstr='#f09839');
 	background-color:#ff5100;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #eba861;
-	display:inline-block;
-	color:#ffffff;
-	font-family:arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
+	border-color:#eba861;
 }
 #catPolitics:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f09839), color-stop(1, #ff5100) );
 	background:-moz-linear-gradient( center top, #f09839 5%, #ff5100 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09839', endColorstr='#ff5100');
 	background-color:#f09839;
-}
-#catPolitics:active {
-	position:relative;
-	top:1px;
 }
 #catBusiness {
 	-moz-box-shadow:inset 0px 1px 0px 0px #8ec2f5;
@@ -234,27 +229,13 @@ body{
 	background:-moz-linear-gradient( center top, #003fc7 5%, #3d77db 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#003fc7', endColorstr='#3d77db');
 	background-color:#003fc7;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #166ec7;
-	display:inline-block;
-	color:#ffffff;
-	font-family:arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 32px;
-	text-decoration:none;
+	border-color:#166ec7;
 }
 #catBusiness:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3d77db), color-stop(1, #003fc7) );
 	background:-moz-linear-gradient( center top, #3d77db 5%, #003fc7 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d77db', endColorstr='#003fc7');
 	background-color:#3d77db;
-}
-#catBusiness:active {
-	position:relative;
-	top:1px;
 }
 
 #catTech {
@@ -265,27 +246,13 @@ body{
 	background:-moz-linear-gradient( center top, #009405 5%, #67de38 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#009405', endColorstr='#67de38');
 	background-color:#009405;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #5ee643;
-	display:inline-block;
-	color:#ffffff;
-	font-family:arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 32px;
-	text-decoration:none;
+	border-color:#5ee643;
 }
 #catTech:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #67de38), color-stop(1, #009405) );
 	background:-moz-linear-gradient( center top, #67de38 5%, #009405 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#67de38', endColorstr='#009405');
 	background-color:#67de38;
-}
-#catTech:active {
-	position:relative;
-	top:1px;
 }
 
 #catSports {
@@ -296,27 +263,13 @@ body{
 	background:-moz-linear-gradient( center top, #7b0094 5%, #ce34ed 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7b0094', endColorstr='#ce34ed');
 	background-color:#7b0094;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #cf59e6;
-	display:inline-block;
-	color:#ffffff;
-	font-family:arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 32px;
-	text-decoration:none;
+	border-color:#cf59e6;
 }
 #catSports:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce34ed), color-stop(1, #7b0094) );
 	background:-moz-linear-gradient( center top, #ce34ed 5%, #7b0094 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce34ed', endColorstr='#7b0094');
 	background-color:#ce34ed;
-}
-#catSports:active {
-	position:relative;
-	top:1px;
 }
 
 #catArt {
@@ -327,27 +280,13 @@ body{
 	background:-moz-linear-gradient( center top, #107fc9 5%, #63d4f0 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#107fc9', endColorstr='#63d4f0');
 	background-color:#107fc9;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #66aef2;
-	display:inline-block;
-	color:#ffffff;
-	font-family:arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
+	border-color:#66aef2;
 }
 #catArt:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #63d4f0), color-stop(1, #107fc9) );
 	background:-moz-linear-gradient( center top, #63d4f0 5%, #107fc9 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#63d4f0', endColorstr='#107fc9');
 	background-color:#63d4f0;
-}
-#catArt:active {
-	position:relative;
-	top:1px;
 }
 
 #catTravel {
@@ -358,27 +297,13 @@ body{
 	background:-moz-linear-gradient( center top, #ff00ae 5%, #ed53d1 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00ae', endColorstr='#ed53d1');
 	background-color:#ff00ae;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #eb5bda;
-	display:inline-block;
-	color:#ffffff;
-	font-family:arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
+	border-color:#eb5bda;
 }
 #catTravel:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ed53d1), color-stop(1, #ff00ae) );
 	background:-moz-linear-gradient( center top, #ed53d1 5%, #ff00ae 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed53d1', endColorstr='#ff00ae');
 	background-color:#ed53d1;
-}
-#catTravel:active {
-	position:relative;
-	top:1px;
 }
 
 /*******************************
