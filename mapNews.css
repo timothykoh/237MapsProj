@@ -65,25 +65,23 @@ body{
 #mainHeading{
 	font-family: "Rockwell", sans-serif;
 	font-style: bold;
-	font-size: 70px;
+	font-size: 60px;
 	color: #ff003c;
 	text-shadow: -1px -1px 5px #000000, -1px 1px 5px #000000, 1px -1px 5px #000000, 0px 0px 5px #000000;
-	width: 400px;
+	width: 350px;
 	margin:auto;
-	margin-top: 50px;
 	margin-bottom: 50px;
 }
 
 #subHeading{
 	font-family: "Rockwell", sans-serif;
 	font-style: bold;
-	font-size: 20px;
+	font-size: 15px;
 	color: #ff003c;
 	text-shadow: -1px -1px 5px #000000, -1px 1px 5px #000000, 1px -1px 5px #000000, 0px 0px 5px #000000;
 	width: 400px;
 	position: absolute;
-	margin-left: 200px;
-	
+	margin-left: 120px;
 }
 
 #sideBar{
@@ -182,6 +180,40 @@ body{
     top: 1px;
 }
 
+#displayNews {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fab3ad;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fab3ad;
+	box-shadow:inset 0px 1px 0px 0px #fab3ad;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f02416), color-stop(1, #e6473e) );
+	background:-moz-linear-gradient( center top, #f02416 5%, #e6473e 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f02416', endColorstr='#e6473e');
+	background-color:#f02416;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #d83526;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+}
+#displayNews:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e6473e), color-stop(1, #f02416) );
+	background:-moz-linear-gradient( center top, #e6473e 5%, #f02416 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6473e', endColorstr='#f02416');
+	background-color:#e6473e;
+}
+#displayNews:active {
+	position:relative;
+	top:1px;
+}
+
+#searchTerm{
+	border-radius: 5px;
+}
 
 /*******************************
 ***** Categories Styling *******
