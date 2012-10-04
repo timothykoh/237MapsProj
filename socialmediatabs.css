@@ -53,8 +53,9 @@
  
 
 .tab_content {
-    padding-top: 5px;
+    padding: 5px;
     display: none;
+
 }
 
 .socialthumb {
