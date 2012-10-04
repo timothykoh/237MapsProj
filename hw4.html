@@ -25,7 +25,7 @@
 			</div>
 			<div id="subHeading">news of the world at your finger tips</div> 
 			<div class="newsCategories">
-				<h1>News Categories</h1>
+				<h1>Categories</h1>
                 <span id="catWorld">World</span>
                 <span id="catBusiness">Business</span>
                 <span id="catScience">Science</span>
@@ -33,9 +33,9 @@
                 <span id="catArts">Arts</span>
 			</div>
 			<form class="searchBar">
-				<h1>News Search Term</h1>
+				<h1>Search</h1>
 				<input type="text" id="searchTerm"></input>
-				<input type="button" id="displayNews" value="Display News"></input>
+				<input type="submit" id="displayNews" value = "Display News" onclick="populateMap();return false" />
 			</form>
 			
 			<canvas id="newsQueue" height="30" width="220"></canvas>
@@ -45,7 +45,7 @@
 			<div id="tabs_container">
 			<ul id="tabs">
 			    <li id="twittertab"><a href="#outputTwitter"><img border="0" class="socialthumb" src="twitterIcon.gif" alt="Pulpit rock" width="25" height="25">Twitter</a></li>
-			    <li><a href="#outputFb"><img border="0" class="socialthumb" src="facebookIcon.png" alt="Pulpit rock" width="25" height="25">Fb</a></li>
+			    <li><a href="#outputFb"><img border="0" class="socialthumb" src="facebookIcon.png" alt="Pulpit rock" width="25" height="25">Facebook</a></li>
 			    <li><a href="#outputBlog"><img border="0" class="socialthumb" src="rss_feed.png" alt="Pulpit rock" width="25" height="25">Blogs</a></li>
 			</ul>
 			</div>

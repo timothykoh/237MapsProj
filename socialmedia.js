@@ -30,7 +30,7 @@ $.getJSON(fbquery, function(data){
     $(data['data']).each(function(i,v){                      
     	if (counter<6){                                       //counter counts the no. of comments already added
      		var userid=this.from.id;
-        console.log(this.message);
+        
         if (this.message===undefined){}
         else{
      		var message = this.message.linkify();

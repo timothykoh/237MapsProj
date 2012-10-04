@@ -1,4 +1,5 @@
 
+
 function Map(){
 	this.mapDisplay;
 	this.currentMarkerPos;
@@ -13,6 +14,8 @@ Map.prototype.infoBox = new InfoBox({
 
 
 var map = new Map();
+
+
 
 window.onload = function(){
 	var mapOptions = {
@@ -32,22 +35,6 @@ window.onload = function(){
     }
 }
 
-/*
-// Deprecated because news.js calls addMarker directly
-function addNewsToMap(news) {
-	//determine the lat and lng of the news event, then add marker
-	var geocoder = new google.maps.Geocoder();  
-	geocoder.geocode( { 'address': news.location}, function(results, status) {
-	  if (status == google.maps.GeocoderStatus.OK) {
-	    geoLocation = results[0].geometry.location;
-	   	addMarker(news, geoLocation);
-	  } 
-	  else {
-	    alert("Geocode was not successful for the following reason: " + status);
-	  }
-	});
-}
-*/
 var geoLocationsList=[];
 
 
@@ -71,7 +58,7 @@ function editorAddgeoLocation(lat,lng,news){
 	}
 
 	geoLocationsList.push(locationTuple);
-	console.log(geoLocationsList);
+
 	var latlng=new google.maps.LatLng(lat, lng);
 	return latlng;
 
@@ -86,7 +73,6 @@ function addMarker(news, geoLocation){
 
 	var latLng= editorAddgeoLocation(lat,lng,news);
 	if (latLng===2){
-		console.log('samenews so not adding');
 		return
 	}
 	//var latLng = new google.maps.LatLng(lat, lng);
@@ -162,14 +148,6 @@ function addMarker(news, geoLocation){
 
 }
 
-/*
-function populateMap(newsDataArray){
-	for (var i = 0; i <= newsDataArray.length; i++){
-		addNewsToMap(newsDataArray[i]);
-	}	
-}
-*/
-
-document.getElementById("displayNews").onclick = function(){
+function populateMap(){
 	getNews(document.getElementById("searchTerm").value, "world");
 }
