@@ -219,7 +219,7 @@ body{
 ***** Categories Styling *******
 *******************************/
 
-#catNews {
+#catWorld {
 	width:25%;
 	-moz-box-shadow:inset 0px 1px 0px 0px #fc779c;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #fc779c;
@@ -230,14 +230,14 @@ body{
 	background-color:#db0025;
 	border-color:#f04a4a;
 }
-#catNews:hover {
+#catWorld:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e63754), color-stop(1, #db0025) );
 	background:-moz-linear-gradient( center top, #e63754 5%, #db0025 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e63754', endColorstr='#db0025');
 	background-color:#e63754;
 }
 
-#catPolitics{
+#catBusiness{
 	width: 30%;
 	-moz-box-shadow:inset 0px 1px 0px 0px #f0c1a1;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #f0c1a1;
@@ -248,13 +248,13 @@ body{
 	background-color:#ff5100;
 	border-color:#eba861;
 }
-#catPolitics:hover {
+#catBusiness:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f09839), color-stop(1, #ff5100) );
 	background:-moz-linear-gradient( center top, #f09839 5%, #ff5100 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09839', endColorstr='#ff5100');
 	background-color:#f09839;
 }
-#catBusiness {
+#catScience {
 	-moz-box-shadow:inset 0px 1px 0px 0px #8ec2f5;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #8ec2f5;
 	box-shadow:inset 0px 1px 0px 0px #8ec2f5;
@@ -264,14 +264,14 @@ body{
 	background-color:#003fc7;
 	border-color:#166ec7;
 }
-#catBusiness:hover {
+#catScience:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3d77db), color-stop(1, #003fc7) );
 	background:-moz-linear-gradient( center top, #3d77db 5%, #003fc7 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d77db', endColorstr='#003fc7');
 	background-color:#3d77db;
 }
 
-#catTech {
+#catSports {
 	-moz-box-shadow:inset 0px 1px 0px 0px #b8ff7d;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #b8ff7d;
 	box-shadow:inset 0px 1px 0px 0px #b8ff7d;
@@ -281,14 +281,14 @@ body{
 	background-color:#009405;
 	border-color:#5ee643;
 }
-#catTech:hover {
+#catSports:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #67de38), color-stop(1, #009405) );
 	background:-moz-linear-gradient( center top, #67de38 5%, #009405 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#67de38', endColorstr='#009405');
 	background-color:#67de38;
 }
 
-#catSports {
+#catArts {
 	-moz-box-shadow:inset 0px 1px 0px 0px #de82f0;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #de82f0;
 	box-shadow:inset 0px 1px 0px 0px #de82f0;
@@ -298,13 +298,13 @@ body{
 	background-color:#7b0094;
 	border-color:#cf59e6;
 }
-#catSports:hover {
+#catArts:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce34ed), color-stop(1, #7b0094) );
 	background:-moz-linear-gradient( center top, #ce34ed 5%, #7b0094 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce34ed', endColorstr='#7b0094');
 	background-color:#ce34ed;
 }
-
+/*
 #catArt {
 	-moz-box-shadow:inset 0px 1px 0px 0px #9ccbf7;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #9ccbf7;
@@ -337,7 +337,7 @@ body{
 	background:-moz-linear-gradient( center top, #ed53d1 5%, #ff00ae 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed53d1', endColorstr='#ff00ae');
 	background-color:#ed53d1;
-}
+}*/
 
 /*******************************
 ***End of Categories Styling ***
