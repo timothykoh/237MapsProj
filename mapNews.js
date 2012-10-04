@@ -48,11 +48,48 @@ function addNewsToMap(news) {
 	});
 }
 */
+var geoLocationsList=[];
+
+
+function editorAddgeoLocation(lat,lng,news){
+	var headline=news.headline;
+	var locationTuple= [lat,lng,headline];
+	
+	for (var i = 0; i < geoLocationsList.length; i++) {
+
+		if (geoLocationsList[i][2]===headline){
+			
+			return 2;
+		}
+
+        else if (geoLocationsList[i][0] === locationTuple[0] ) {
+            //change tuple;
+            lat=lat+4;
+            lng=lng+4;
+           
+        }
+	}
+
+	geoLocationsList.push(locationTuple);
+	console.log(geoLocationsList);
+	var latlng=new google.maps.LatLng(lat, lng);
+	return latlng;
+
+}
+
+
+	
 
 function addMarker(news, geoLocation){	
 	var lat = geoLocation.Xa;
 	var lng = geoLocation.Ya;
-	var latLng = new google.maps.LatLng(lat, lng);
+
+	var latLng= editorAddgeoLocation(lat,lng,news);
+	if (latLng===2){
+		console.log('samenews so not adding');
+		return
+	}
+	//var latLng = new google.maps.LatLng(lat, lng);
 	var imgWidth = news.thumbnail.width;
 	var imgHeight = news.thumbnail.height;
 	var img = new google.maps.MarkerImage(news.thumbnail.url, //url
@@ -92,10 +129,15 @@ function addMarker(news, geoLocation){
 		
 		var headline = document.createElement("h1");
 		headline.innerHTML = this.headline;
+
 ////////////////////////////* nicky adding social widget when marker is added*/////////////////
-		console.log(lat+lng+'addmarker nicky');
-		getSearch(this.headline);                       //calling social media widget function
-		
+		if (this.keywords){
+			console.log(this.keywords);
+			getSearch(this.keywords);
+			}
+		else{
+			getSearch(this.headline);                       //calling social media widget function
+			}
 
 		var content = document.createElement("div");
 		content.setAttribute("class", "abstract");

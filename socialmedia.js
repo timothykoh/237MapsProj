@@ -3,17 +3,17 @@
 
 function getSearch(keyword){
     getFb(keyword);
-    console.log('Searching1');
+    
     getTweets(keyword);
-    console.log('Searching2');
+  
     getBlog(keyword);
-    console.log('Searching3');
+
 
 }
 
 function getFb(keyword){
 var str= keyword;
-console.log(str+'getFB');
+
 var fbquery = "https://graph.facebook.com/search?q={"+
     str+
     "}&type=post";
@@ -30,8 +30,11 @@ $.getJSON(fbquery, function(data){
     $(data['data']).each(function(i,v){                      
     	if (counter<6){                                       //counter counts the no. of comments already added
      		var userid=this.from.id;
+        console.log(this.message);
+        if (this.message===undefined){}
+        else{
      		var message = this.message.linkify();
-
+            }
             var userpic="https://graph.facebook.com/"
                 +userid+
                 "/picture/";
@@ -103,7 +106,7 @@ function searchComplete() {
   
 
       var blogSearchResults='<div class="each"><a href="+link+">'+title+'</a></div>'; 
-      console.log(blogSearchResults);
+     
       //var blogSearchResults=<a target="_blank" href='link'><p class="text">title</p></a>;
       
       $("#outputBlog").append(blogSearchResults);
