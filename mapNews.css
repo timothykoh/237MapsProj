@@ -63,25 +63,23 @@ body{
 
 
 #mainHeading{
-	font-family: "Rockwell", sans-serif;
-	font-style: bold;
-	font-size: 60px;
+	font-family: "Rockwell", serif;
+	font-weight: bold;
+	font-size: 40px;
 	color: #ff003c;
 	text-shadow: -1px -1px 5px #000000, -1px 1px 5px #000000, 1px -1px 5px #000000, 0px 0px 5px #000000;
-	width: 350px;
 	margin:auto;
-	margin-bottom: 50px;
+	margin-bottom: 10px;
 }
 
 #subHeading{
-	font-family: "Rockwell", sans-serif;
-	font-style: bold;
-	font-size: 15px;
+	font-family: "Rockwell", serif;
+	font-weight: bold;
+	font-size: 16px;
+	position: relative;
+	left: 10px;
 	color: #ff003c;
 	text-shadow: -1px -1px 5px #000000, -1px 1px 5px #000000, 1px -1px 5px #000000, 0px 0px 5px #000000;
-	width: 400px;
-	position: absolute;
-	margin-left: 120px;
 }
 
 #sideBar{
