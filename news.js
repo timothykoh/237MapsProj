@@ -2,13 +2,13 @@ var countries = ['afghanistan', 'aland islands', 'albania', 'algeria', 'american
 
 var article_queue = [];
 
-function getNews(query) {
+function getNews(query, category) {
     var i;
     var urls = [], q_urls = [];
     
     if (query.length === 0) {
         // General news
-        q_urls.push({q: "http://api.nytimes.com/svc/news/v3/content/all/world/.json?api-key=1f210208b2357d3721c343fb3bf78de7:17:66718702", callback: "callback1"});
+        q_urls.push({q: "http://api.nytimes.com/svc/news/v3/content/all/"+category+"/.json?api-key=1f210208b2357d3721c343fb3bf78de7:17:66718702", callback: "callback1"});
     }
     else {
         // Article search
@@ -95,24 +95,27 @@ function callback1(data) {
     var results = data.query.results.json.results;
     var ret = [];
     var article;
-    
+    var dumped = "";
     for(var i=0; i<results.length; i++) {
-        if (results[i].geo_facet.length > 0 && results[i].multimedia.length > 0) {
+        if (results[i].geo_facet.length > 0) {
             article = {};
             article.headline = results[i].title;
             article.abstract = results[i].abstract;
             article.location = extractLocation(results[i].geo_facet, results[i].abstract);
             article.url = results[i].url;
             article.keywords = makeKeywords(results[i]);
-            article.thumbnail = {url: results[i].multimedia[0].url, 
-                                 width: results[i].multimedia[0].width, 
-                                 height: results[i].multimedia[0].height};
+            article.thumbnail = {url: "images/news.png", width: 64, height: 64};
+            if (results[i].multimedia.length > 0) {
+                article.thumbnail = {url: results[i].multimedia[0].url, 
+                                     width: results[i].multimedia[0].width, 
+                                     height: results[i].multimedia[0].height};
+            }
             article.picture = "";
             
             ret.push(article);
         }
     }
-      
+    alert(ret.length);
     locateAndPopulate(ret);
 }
 

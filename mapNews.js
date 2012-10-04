@@ -21,6 +21,15 @@ window.onload = function(){
 		mapTypeId: google.maps.MapTypeId.HYBRID
 	};
 	map.mapDisplay = new google.maps.Map(document.getElementById("mainMap"), mapOptions);
+	
+	var cats = ["World", "Business", "Sports", "Arts"];
+	var i;
+	for(i=0; i<cats.length; i++) {
+	    document.getElementById("cat"+cats[i]).onclick = function() {
+	        var catname = this.id.substr(3, this.id.length-3).toLowerCase();
+	        getNews("", catname);
+	    }
+    }
 }
 
 /*
@@ -120,7 +129,5 @@ function populateMap(newsDataArray){
 */
 
 document.getElementById("displayNews").onclick = function(){
-	getNews(document.getElementById("searchTerm").value);
+	getNews(document.getElementById("searchTerm").value, "world");
 }
-
-
