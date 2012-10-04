@@ -105,7 +105,7 @@ function searchComplete() {
       var snippet=blogSearch.results[i].content;
   
 
-      var blogSearchResults='<div class="each"><a href="+link+">'+title+'</a></div>'; 
+      var blogSearchResults='<div class="each"><a href="'+link+'">'+title+'</a></div>'; 
      
       //var blogSearchResults=<a target="_blank" href='link'><p class="text">title</p></a>;
       
