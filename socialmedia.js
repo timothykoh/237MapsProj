@@ -17,7 +17,12 @@ console.log(str+'getFB');
 var fbquery = "https://graph.facebook.com/search?q={"+
     str+
     "}&type=post";
-console.log(fbquery);
+String.prototype.linkify=function(){
+              return this.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&;\?\/.=]+/g,function(m){
+                return m.link(m);
+              });
+            }
+
 $.getJSON(fbquery, function(data){
 	
     var counter=0;
@@ -25,7 +30,8 @@ $.getJSON(fbquery, function(data){
     $(data['data']).each(function(i,v){                      
     	if (counter<6){                                       //counter counts the no. of comments already added
      		var userid=this.from.id;
-     		var message = this.message;
+     		var message = this.message.linkify();
+
             var userpic="https://graph.facebook.com/"
                 +userid+
                 "/picture/";
@@ -47,11 +53,14 @@ $.getJSON(fbquery, function(data){
 }
 
 
-
 function getTweets(keyword){
 
     var searchterm = keyword;
-    
+    String.prototype.linkify=function(){
+              return this.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&;\?\/.=]+/g,function(m){
+                return m.link(m);
+              });
+            }
     
     var url= "http://search.twitter.com/search.json?q="+
         searchterm + 
@@ -61,6 +70,7 @@ function getTweets(keyword){
       var counter=0;
         $(data.results).each(function(i,v){
           if (counter<5){
+            this.text = this.text.linkify();
             var tweet='<div class="tweet"><div class="tweet-left"><a target="_blank" href="http://twitter.com/'+this.from_user+'"><img width="48" height="48" alt="'+this.from_user+' on Twitter" src="'+this.profile_image_url+'" /></a></div><div class="tweet-right"><p class="text">'+this.text+'</p></div><br style="clear: both;" /></div>';
             counter+=1;
             $("#outputTwitter").append(tweet);
@@ -90,9 +100,9 @@ function searchComplete() {
       link = link.slice(0, -1);
       var title = blogSearch.results[i].title;
       var snippet=blogSearch.results[i].content;
-      console.log(link);
+  
 
-      var blogSearchResults="<a href="+link+">"+title+"</a></br>"; 
+      var blogSearchResults='<div class="each"><a href="+link+">'+title+'</a></div>'; 
       console.log(blogSearchResults);
       //var blogSearchResults=<a target="_blank" href='link'><p class="text">title</p></a>;
       
@@ -104,7 +114,7 @@ function searchComplete() {
 function getBlog(keyword) {
   $("#outputBlog").empty();
   var SearchTerm= keyword;
-  console.log(SearchTerm);
+
   // Create a BlogSearch instance.
   blogSearch = new google.search.BlogSearch();
 

@@ -93,7 +93,7 @@ function addMarker(news, geoLocation){
 		var headline = document.createElement("h1");
 		headline.innerHTML = this.headline;
 ////////////////////////////* nicky adding social widget when marker is added*/////////////////
-		console.log(this.headline+'addmarker nicky'+typeof(this.headline));
+		console.log(lat+lng+'addmarker nicky');
 		getSearch(this.headline);                       //calling social media widget function
 		
 
