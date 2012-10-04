@@ -115,7 +115,6 @@ function callback1(data) {
             ret.push(article);
         }
     }
-    alert(ret.length);
     locateAndPopulate(ret);
 }
 
@@ -200,7 +199,7 @@ function clearArticleQueue() {
                 addMarker(top_article, geoLocation);
             }
             else {
-                alert("Geocode was not successful for the following reason: " + status);
+                //console.log("Geocode was not successful for the following reason: " + status);
             }
         });
     }

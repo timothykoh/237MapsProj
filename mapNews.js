@@ -22,7 +22,7 @@ window.onload = function(){
 	};
 	map.mapDisplay = new google.maps.Map(document.getElementById("mainMap"), mapOptions);
 	
-	var cats = ["World", "Business", "Sports", "Arts"];
+	var cats = ["World", "Business", "Science", "Sports", "Arts"];
 	var i;
 	for(i=0; i<cats.length; i++) {
 	    document.getElementById("cat"+cats[i]).onclick = function() {
