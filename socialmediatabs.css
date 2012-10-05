@@ -53,15 +53,16 @@
     padding-left: 24px;
 }
  
-
+#outputTwitter {
+    display: block;
+}
 .tab_content {
     padding: 5px;
     display: none;
-
 }
 
 .socialthumb {
-    
+    border:0px;
     position:relative;
     left:-2px;
     top:5px;
