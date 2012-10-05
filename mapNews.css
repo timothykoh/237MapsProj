@@ -76,8 +76,7 @@ body{
 	font-family: "Rockwell", serif;
 	font-weight: bold;
 	font-size: 16px;
-	position: relative;
-	left: 60px;
+	margin-left: 60px;
 	color: #ff003c;
 	text-shadow: -1px -1px 5px #000000, -1px 1px 5px #000000, 1px -1px 5px #000000, 0px 0px 5px #000000;
 }
