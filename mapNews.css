@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
+    font-family: sans-serif;
 }
 ol, ul {
     list-style: none;
@@ -73,8 +74,8 @@ body{
 #subHeading{
     font-family: "Rockwell", serif;
     font-weight: bold;
-    font-size: 16px;
-    margin-left: 60px;
+    font-size: 18px;
+    margin-left: 40px;
     color: #ff003c;
     text-shadow: -1px -1px 5px #000000, -1px 1px 5px #000000, 1px -1px 5px #000000, 0px 0px 5px #000000;
 }
@@ -169,7 +170,7 @@ body{
     font-family:arial, sans-serif;
     font-size:15px;
     font-weight:bold;
-    padding:6px 32px;
+    padding:6px 20px;
     text-align:center;
     text-decoration:none;
     cursor:pointer;

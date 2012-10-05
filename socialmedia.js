@@ -1,14 +1,13 @@
-
-
+/*
+Benjamin Choi (bengyenc)
+Timothy Koh (tkoh1)
+Nicky Ong (junyouo)
+*/
 
 function getSearch(keyword){
     getFb(keyword);
-    
     getTweets(keyword);
-  
     getBlog(keyword);
-
-
 }
 
 function getFb(keyword){
@@ -24,34 +23,34 @@ String.prototype.linkify=function(){
             }
 
 $.getJSON(fbquery, function(data){
-	
+    
     var counter=0;
     $("#outputFb").empty();
     $(data['data']).each(function(i,v){                      
-    	if (counter<6){                                       //counter counts the no. of comments already added
-     		var userid=this.from.id;
+        if (counter<6){                                       //counter counts the no. of comments already added
+             var userid=this.from.id;
         
         if (this.message===undefined){}
         else{
-     		var message = this.message.linkify();
+             var message = this.message.linkify();
             }
             var userpic="https://graph.facebook.com/"
                 +userid+
                 "/picture/";
             var useridurl="https://facebook.com/"
                 +userid;
-   			if (this.message && this.message.length<300 && this.message.length>100){
+               if (this.message && this.message.length<300 && this.message.length>100){
              
              var fbUpdate='<div class="tweet"><div class="tweet-left"><a target="_blank" href="'+useridurl+'"><img width="48" height="48" alt="'+useridurl+' on FB" src="'+userpic+'" /></a></div><div class="tweet-right"><p class="text">'+message+'</p></div><br style="clear: both;" /></div>';
              
 
              $("#outputFb").append(fbUpdate);
              counter+=1;
-    			}                
+                }                
                     
-       		}           
+               }           
         })
-	});
+    });
 
 }
 
